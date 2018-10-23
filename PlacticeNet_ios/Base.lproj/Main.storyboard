@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="LoginView" id="BYZ-38-t0r" customClass="LoginViewController" customModule="PlacticeNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Twt-Ew-nfM">
+                                <rect key="frame" x="147.5" y="318.5" width="80" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="0hO-xx-Yvf"/>
+                                    <constraint firstAttribute="width" constant="80" id="iUo-dU-wpS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rNS-Ws-fD6">
+                                <rect key="frame" x="156.5" y="358.5" width="62" height="30"/>
+                                <state key="normal" title="ログイン"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yje-E9-89b"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="rNS-Ws-fD6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YKA-o0-hIW"/>
+                            <constraint firstItem="Twt-Ew-nfM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="e1f-Wy-jHl"/>
+                            <constraint firstItem="Twt-Ew-nfM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="sHV-3e-5o6"/>
+                            <constraint firstItem="rNS-Ws-fD6" firstAttribute="top" secondItem="Twt-Ew-nfM" secondAttribute="bottom" constant="10" id="zcq-2o-GxB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginItem" destination="rNS-Ws-fD6" id="BpW-Si-pgf"/>
+                        <outlet property="textField" destination="Twt-Ew-nfM" id="AY3-WI-s6l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="87" y="44"/>
+        </scene>
+        <!--Tweet View Controller-->
+        <scene sceneID="1pA-kH-dkJ">
+            <objects>
+                <viewController storyboardIdentifier="TweetView" id="kBK-zw-tgY" customClass="TweetViewController" customModule="PlacticeNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aeu-QC-vil">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceHorizontal="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="INb-kG-MHM">
+                                <rect key="frame" x="10" y="30" width="315" height="160"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="hYo-RS-KaL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" lookupSuggestion="YES"/>
+                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bXY-Kh-JGn">
+                                <rect key="frame" x="0.0" y="200" width="375" height="467"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bRc-HK-N1R">
+                                <rect key="frame" x="335" y="95" width="30" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="F34-tq-c8M"/>
+                                    <constraint firstAttribute="height" constant="30" id="geM-3Z-lT4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
+                                <state key="normal" title="投稿">
+                                    <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tweetButton:" destination="kBK-zw-tgY" eventType="touchUpInside" id="dZj-fS-aPE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bXY-Kh-JGn" firstAttribute="top" secondItem="INb-kG-MHM" secondAttribute="bottom" constant="10" id="85E-Ju-owm"/>
+                            <constraint firstItem="bRc-HK-N1R" firstAttribute="leading" secondItem="INb-kG-MHM" secondAttribute="trailing" constant="10" id="JS8-pL-XOE"/>
+                            <constraint firstItem="INb-kG-MHM" firstAttribute="top" secondItem="gid-0k-s3R" secondAttribute="top" constant="10" id="WqM-Aq-RnD"/>
+                            <constraint firstItem="bRc-HK-N1R" firstAttribute="centerY" secondItem="INb-kG-MHM" secondAttribute="centerY" id="XbE-PD-1Z7"/>
+                            <constraint firstItem="bXY-Kh-JGn" firstAttribute="bottom" secondItem="gid-0k-s3R" secondAttribute="bottom" id="bWx-q5-ubE"/>
+                            <constraint firstItem="bXY-Kh-JGn" firstAttribute="trailing" secondItem="gid-0k-s3R" secondAttribute="trailing" id="md9-PQ-bTR"/>
+                            <constraint firstItem="gid-0k-s3R" firstAttribute="trailing" secondItem="bRc-HK-N1R" secondAttribute="trailing" constant="10" id="rfx-fz-dlZ"/>
+                            <constraint firstItem="INb-kG-MHM" firstAttribute="leading" secondItem="gid-0k-s3R" secondAttribute="leading" constant="10" id="wA5-Et-mkS"/>
+                            <constraint firstItem="bXY-Kh-JGn" firstAttribute="leading" secondItem="gid-0k-s3R" secondAttribute="leading" id="yBN-xt-Xmj"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gid-0k-s3R"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="bXY-Kh-JGn" id="tMM-fZ-Z1Y"/>
+                        <outlet property="textView" destination="INb-kG-MHM" id="HfS-Or-NGM"/>
+                        <outlet property="textViewHight" destination="hYo-RS-KaL" id="W7I-ev-8rd"/>
+                        <outlet property="textViewTrailing" destination="rfx-fz-dlZ" id="vhL-Yi-6fl"/>
+                        <outlet property="tweetButtonHight" destination="geM-3Z-lT4" id="acF-1e-t86"/>
+                        <outlet property="tweetButtonItem" destination="bRc-HK-N1R" id="2b2-kb-7YS"/>
+                        <outlet property="tweetButtonWidth" destination="F34-tq-c8M" id="D69-c2-jos"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lm9-gq-peo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.60000000000002" y="43.628185907046479"/>
+        </scene>
+        <!--Text Edit View Controller-->
+        <scene sceneID="BFf-fG-aNu">
+            <objects>
+                <viewController storyboardIdentifier="TextView" id="ere-ut-Ae4" customClass="TextEditViewController" customModule="PlacticeNet" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Wv4-fm-IIc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="28S-SF-fDf">
+                                <rect key="frame" x="10" y="30" width="355" height="250"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="iAX-Hs-m2K"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FZ6-mV-xyi">
+                                <rect key="frame" x="10" y="290" width="77" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="y4x-qk-9qB"/>
+                                </constraints>
+                                <state key="normal" title="変更を保存"/>
+                                <connections>
+                                    <action selector="setEditedText:" destination="ere-ut-Ae4" eventType="touchUpInside" id="2Vh-Py-9nl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gr-Xg-3gc">
+                                <rect key="frame" x="288" y="290" width="77" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="D6A-ic-ZaU"/>
+                                </constraints>
+                                <state key="normal" title="キャンセル"/>
+                                <connections>
+                                    <action selector="cancelEditedText:" destination="ere-ut-Ae4" eventType="touchUpInside" id="N6I-K1-5K7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="28S-SF-fDf" firstAttribute="top" secondItem="jc0-W6-Oir" secondAttribute="top" constant="10" id="9Ag-Ey-8NX"/>
+                            <constraint firstItem="28S-SF-fDf" firstAttribute="leading" secondItem="jc0-W6-Oir" secondAttribute="leading" constant="10" id="GV4-I6-Wrr"/>
+                            <constraint firstItem="4Gr-Xg-3gc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FZ6-mV-xyi" secondAttribute="trailing" constant="8" symbolic="YES" id="Xah-04-olr"/>
+                            <constraint firstItem="4Gr-Xg-3gc" firstAttribute="top" secondItem="28S-SF-fDf" secondAttribute="bottom" constant="10" id="ZkP-8P-eYd"/>
+                            <constraint firstItem="FZ6-mV-xyi" firstAttribute="top" secondItem="28S-SF-fDf" secondAttribute="bottom" constant="10" id="f88-GA-4xD"/>
+                            <constraint firstItem="jc0-W6-Oir" firstAttribute="trailing" secondItem="28S-SF-fDf" secondAttribute="trailing" constant="10" id="kT9-cP-WB5"/>
+                            <constraint firstItem="jc0-W6-Oir" firstAttribute="trailing" secondItem="4Gr-Xg-3gc" secondAttribute="trailing" constant="10" id="mau-Ui-3z3"/>
+                            <constraint firstItem="FZ6-mV-xyi" firstAttribute="leading" secondItem="jc0-W6-Oir" secondAttribute="leading" constant="10" id="ndc-kj-3XD"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="jc0-W6-Oir"/>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="28S-SF-fDf" id="ZVw-w9-qX0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lux-6b-Lku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1528.8" y="44.527736131934034"/>
+        </scene>
+    </scenes>
+</document>
