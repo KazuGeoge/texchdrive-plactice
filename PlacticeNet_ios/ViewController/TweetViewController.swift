@@ -8,35 +8,50 @@
 
 import UIKit
 
-class TweetViewController: UIViewController, UITextViewDelegate, EditCell, TableViewReload {
-   
+protocol GetAllType {
+    func getAllMessage()
+}
+
+protocol CreateType {
+     func createMessage(tweet: String)
+}
+
+protocol DeleteType {
+    func deleteMessage(textID: Int)
+}
+
+class TweetViewController: UIViewController, UITextViewDelegate, EditCell, TableReloadDelegate, SetMessageDelegate, NewMessageDelegate {
+ 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var tweetButtonItem: UIButton!
-    @IBOutlet weak var tweetButtonHight: NSLayoutConstraint!
-    @IBOutlet weak var tweetButtonWidth: NSLayoutConstraint!
+    @IBOutlet weak var tweetButtonOutllet: UIButton!
     @IBOutlet weak var textViewHight: NSLayoutConstraint!
     @IBOutlet weak var textViewTrailing: NSLayoutConstraint!
+    @IBOutlet weak var tweetButtonTrailing: NSLayoutConstraint!
+    
+    private var isFarstTouch = true
+    // クラスのインスタンス
     var tableViewDataSouce: TableViewDataSouce = TableViewDataSouce()
     var tweetTableViewCell: TweetTableViewCell = TweetTableViewCell()
     var textEditView: TextEditViewController = TextEditViewController()
-    private var isFarstTouch = true
+    var sendAPIData: SendAPIData = SendAPIData()
+    var readAPIData: ReadAPIData = ReadAPIData()
+    var createAPIData: CreateAPIData = CreateAPIData()
+    var deleteAPIData: DeleteAPIData = DeleteAPIData()
+    // デリゲートのインスタンス
+    var deleteType: DeleteType?
+    var logInDelegate: LogInDelegate?
+    var getAllType: GetAllType?
+    var createType: CreateType?
+    var newMessageDelegate: NewMessageDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configureTextView()
         configureTableView()
-        tweetButtonItem.layer.borderWidth = 0.5
-        tweetButtonItem.layer.cornerRadius = 5.0
-        tweetButtonItem.layer.borderColor = UIColor.black.cgColor
-    }
-    
-    private func configureTableView() {
-        tableView.delegate = tableViewDataSouce
-        tableView.dataSource = tableViewDataSouce
-        tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        tableViewDataSouce.editCell = self
+        configureUI()
+        setDelegate()
     }
     
     private func configureTextView() {
@@ -48,6 +63,38 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         textView.isEditable = true
     }
     
+    private func configureTableView() {
+        tableView.delegate = tableViewDataSouce
+        tableView.dataSource = tableViewDataSouce
+        tableView.register(UINib(nibName: "TweetTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+    }
+    
+    private func configureUI(){
+        tweetButtonOutllet.layer.borderWidth = 0.5
+        tweetButtonOutllet.layer.cornerRadius = 5.0
+        tweetButtonOutllet.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    // tableView,textView以外のDelegateの設定
+    private func setDelegate() {
+        tableViewDataSouce.editCell = self
+        readAPIData.setMessageDelegate = self
+        createAPIData.newMessageDelegate = self
+        getAllType = readAPIData
+        createType = createAPIData
+        deleteType = deleteAPIData
+        getAllType?.getAllMessage()
+    }
+    
+    // 全取得したContentsをtableViewDataSouceにセットする
+    func setMessageData(content: [String], id: [Int]) {
+        tableViewDataSouce.messageContents = []
+        tableViewDataSouce.textIDArray = []
+        tableViewDataSouce.messageContents = content
+        tableViewDataSouce.textIDArray = id
+        tableView.reloadData()
+    }
+   
     // textViewが選択された時の挙動
     func textViewDidBeginEditing(_ textView: UITextView) {
         
@@ -57,12 +104,14 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
             isFarstTouch = false
         }
         
-        // TextViewとButtonwの大きさを変更
-        textView.alpha = 1
-        textViewTrailing.constant = 50
-        tweetButtonHight.constant = 40
-        tweetButtonWidth.constant = 90
         textViewHight.constant = textView.sizeThatFits(textView.frame.size).height
+        textViewTrailing.constant = 40
+        tweetButtonTrailing.constant = 40
+        // TextViewとButtonwの大きさを変更
+        UITextView.animate(withDuration: 1.0, delay: 0.0, animations: {
+            self.tweetButtonOutllet.transform = CGAffineTransform(scaleX: 2.5, y: 1)
+        }, completion: nil)
+        textView.alpha = 1
     }
     
     // 入力された文字に合わせてtextViewの大きさを調節
@@ -81,14 +130,15 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         view.endEditing(true)
     }
     
-    // 投稿ボタンで入力した文字をTableViewへ反映する
-    @IBAction func tweetButton(_ sender: Any) {
+    // 投稿ボタンで、Contentsを送信するデリゲートの委譲を設定
+    @IBAction func tweetButtonAction(_ sender: Any) {
         textView.resignFirstResponder()
         
         if textView.text.isEmpty == false && isFarstTouch == false {
-            tableViewDataSouce.tweetContents.append(textView.text)
-            textView.text = ""
-            tableView.reloadData()
+            if let contents = textView.text {
+                textView.text = ""
+                createType?.createMessage(tweet: contents)
+            }
         } else {
             // アラートを表示
             let alertController = UIAlertController(title: "Text is empty", message: "文字の入力がありません", preferredStyle: .alert)
@@ -98,12 +148,19 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         defaultTextViewSize()
     }
     
+    // 投稿したContentsのidと内容をtableViewDataSouceの先頭にセットする
+    func setNewMessageData(content: String, textID: Int) {
+        tableViewDataSouce.messageContents.insert(content, at: 0)
+        tableViewDataSouce.textIDArray.insert(textID, at: 0)
+        tableView.reloadData()
+    }
+    
     // 各Itemのサイズを元に戻す
     private func defaultTextViewSize() {
         textViewTrailing.constant = 10
-        tweetButtonHight.constant = 30
-        tweetButtonWidth.constant = 30
+        tweetButtonTrailing.constant = 10
         textViewHight.constant = 160
+        tweetButtonOutllet.transform = CGAffineTransform(scaleX: 1, y: 1)
     }
     
     // 編集画面に遷移し編集するデータを渡す
@@ -112,9 +169,9 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         
         if let textEditView = mainStoryboard.instantiateViewController(withIdentifier: "TextView") as? TextEditViewController {
             textEditView.tableViewDataSouce = tableViewDataSouce
-            textEditView.editTarget = tableViewDataSouce.tweetContents[indexPathRow]
+            textEditView.editMessage = tableViewDataSouce.messageContents[indexPathRow]
             textEditView.indexPath = indexPathRow
-            textEditView.tableViewReload = self
+            textEditView.tableReloadDelegate = self
             present(textEditView, animated: true, completion: nil)
         }
     }
@@ -130,10 +187,13 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         // キャンセルボタン
         alertController.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         // OKボタン
-        alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: {
-            OKAction in self.tableViewDataSouce.tweetContents.remove(at: indexPathRow)
+        alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: { OKAction in
+            self.tableViewDataSouce.messageContents.remove(at: indexPathRow)
+            let tweetID = self.tableViewDataSouce.textIDArray[indexPathRow]
+            self.tableViewDataSouce.textIDArray.remove(at: indexPathRow)
+            self.deleteType?.deleteMessage(textID: tweetID)
             self.tableView.reloadData()
-        }
+                }
             )
         )
         // アラートを表示

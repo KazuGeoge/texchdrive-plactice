@@ -11,7 +11,10 @@ import UIKit
 class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
 
     let sectionTitle = ["ツイート"]
-    var tweetContents: [String] = []
+    var messageContents: [String] = []
+    var textIDArray: [Int] = []
+    var contentsList: [BaseContents] = []
+    // TODO: TweetVCを入れる方法が他にないか
     var editCell: EditCell?
     
     // セクションの数
@@ -26,19 +29,21 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     // cellの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return tweetContents.count
+        return messageContents.count
     }
     
     //cellの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
-            let contentString = tweetContents[indexPath.row]
+            let contentString = messageContents[indexPath.row]
+            let contentID = textIDArray[indexPath.row] 
             cell.textLabel?.text = contentString
             cell.textLabel?.font = UIFont.systemFont(ofSize: 12)
             cell.textLabel?.numberOfLines = 10
             cell.editCellDelegate = editCell
-            // 各ボタンのtagにindex番号を渡す
+            cell.textID = contentID
+            // 行数把握のため各ボタンのtagにindex番号を渡す
             cell.deleteItem.tag = indexPath.row
             cell.editItem.tag = indexPath.row
             return cell

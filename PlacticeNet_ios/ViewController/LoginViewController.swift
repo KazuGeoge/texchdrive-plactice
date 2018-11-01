@@ -8,10 +8,18 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+protocol LoginType {
+    func postMail(mailAddress: String)
+}
 
+class LoginViewController: UIViewController, UITextFieldDelegate, LogInDelegate, ErrorType {
+   
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var loginItem: UIButton!
+    var readAPIData: ReadAPIData = ReadAPIData()
+    var sendAPIData: SendAPIData = SendAPIData()
+    var loginType: LoginType?
+    var logInDelegate: LogInDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,29 +29,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textField.delegate = self
         loginItem.alpha = 0
         loginItem.isEnabled = false
+        loginType = sendAPIData
+        sendAPIData.logInDelegate = self
+        sendAPIData.errorType = self
     }
     
     // リターンでキーボードを閉じる
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        buttonAnimate()
+        animateButton()
         textField.resignFirstResponder()
         return true
     }
     
      // キーボード以外をタッチでキーボードを閉じる
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        buttonAnimate()
+        animateButton()
         view.endEditing(true)
     }
     
     // textFieldに入力があったら遷移ボタンを出す
-    private func buttonAnimate() {
+    private func animateButton() {
         
         if textField.text?.isEmpty == false {
             UIButton.animate(withDuration: 1) {
                 self.loginItem.alpha = 1
-                self.loginItem.isEnabled = true
             }
+            loginItem.isEnabled = true
         } else {
             loginItem.isEnabled = false
             loginItem.alpha = 0
@@ -52,13 +63,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButton(_ sender: Any) {
         
-// TODO: 今は全て遷移可能。textFieldに入力した文字を判定しログインできる形にする。
-//        if textField.text == "" {
-            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            if let teewtView = mainStoryboard.instantiateViewController(withIdentifier: "TweetView") as? TweetViewController {
-                navigationController?.pushViewController(teewtView, animated: true)
-//            }
+        if let loginAddress = textField.text {
+            loginType?.postMail(mailAddress: loginAddress)
         }
+    }
+    
+    func logInView() {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let teewtView = mainStoryboard.instantiateViewController(withIdentifier: "TweetView") as? TweetViewController {
+            navigationController?.pushViewController(teewtView, animated: true)
+        }
+    }
+    
+    func alertErrorMessage() {
+        // アラートを表示
+        let alertController = UIAlertController(title: "ログインに失敗しました", message: "メールアドレスを見直して下さい", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "やり直す", style: .cancel, handler: { OKAction in
+            self.dismiss(animated: true, completion: nil)
+                }
+            )
+        )
+        present(alertController, animated: true, completion: nil)
     }
 }
 

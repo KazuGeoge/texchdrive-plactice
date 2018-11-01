@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF33130F21804C7400E5FBFA /* ReadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33130E21804C7400E5FBFA /* ReadAPIData.swift */; };
+		AF33131221804E0300E5FBFA /* BaseContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131121804E0300E5FBFA /* BaseContents.swift */; };
+		AF33131421804E1200E5FBFA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131321804E1200E5FBFA /* Const.swift */; };
+		AF3313162181BCF800E5FBFA /* SendAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3313152181BCF800E5FBFA /* SendAPIData.swift */; };
+		AF331318218634CB00E5FBFA /* SingletonURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */; };
+		AF33131A21871D2200E5FBFA /* CreateAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131921871D2200E5FBFA /* CreateAPIData.swift */; };
+		AF33131C21872C4700E5FBFA /* UPLoadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */; };
+		AF33131E2187313D00E5FBFA /* DeleteAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */; };
 		AFA8AAF22178F12E00D2E80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */; };
 		AFA8AAF42178F12E00D2E80C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AAF32178F12E00D2E80C /* LoginViewController.swift */; };
 		AFA8AAF72178F12E00D2E80C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA8AAF52178F12E00D2E80C /* Main.storyboard */; };
@@ -21,6 +29,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF33130E21804C7400E5FBFA /* ReadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadAPIData.swift; sourceTree = "<group>"; };
+		AF33131121804E0300E5FBFA /* BaseContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContents.swift; sourceTree = "<group>"; };
+		AF33131321804E1200E5FBFA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
+		AF3313152181BCF800E5FBFA /* SendAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAPIData.swift; sourceTree = "<group>"; };
+		AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonURLRequest.swift; sourceTree = "<group>"; };
+		AF33131921871D2200E5FBFA /* CreateAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAPIData.swift; sourceTree = "<group>"; };
+		AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPLoadAPIData.swift; sourceTree = "<group>"; };
+		AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAPIData.swift; sourceTree = "<group>"; };
 		AFA8AAEE2178F12E00D2E80C /* PlacticeNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacticeNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA8AAF32178F12E00D2E80C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF33131021804DA500E5FBFA /* model */ = {
+			isa = PBXGroup;
+			children = (
+				AF33131121804E0300E5FBFA /* BaseContents.swift */,
+				AF33131321804E1200E5FBFA /* Const.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		AFA58288217F2BD400C67CB1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +86,12 @@
 			isa = PBXGroup;
 			children = (
 				AFBAFD212179CBBA00BA6C6C /* TableViewDataSouce.swift */,
+				AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */,
+				AF3313152181BCF800E5FBFA /* SendAPIData.swift */,
+				AF33130E21804C7400E5FBFA /* ReadAPIData.swift */,
+				AF33131921871D2200E5FBFA /* CreateAPIData.swift */,
+				AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */,
+				AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */,
 			);
 			name = Views;
 			path = cells;
@@ -88,8 +119,9 @@
 				AFA58288217F2BD400C67CB1 /* ViewController */,
 				AFA5828B217F2C4100C67CB1 /* Views */,
 				AFBAFD202179CB8100BA6C6C /* cells */,
-				AFA8AAF52178F12E00D2E80C /* Main.storyboard */,
+				AF33131021804DA500E5FBFA /* model */,
 				AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */,
+				AFA8AAF52178F12E00D2E80C /* Main.storyboard */,
 				AFA8AAFB2178F13000D2E80C /* Assets.xcassets */,
 				AFA8AAFD2178F13000D2E80C /* LaunchScreen.storyboard */,
 				AFA8AB002178F13000D2E80C /* Info.plist */,
@@ -180,13 +212,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF33131E2187313D00E5FBFA /* DeleteAPIData.swift in Sources */,
+				AF33131221804E0300E5FBFA /* BaseContents.swift in Sources */,
 				AFA8AB0721799E9500D2E80C /* TweetViewController.swift in Sources */,
 				AFBAFD222179CBBA00BA6C6C /* TableViewDataSouce.swift in Sources */,
+				AF33131C21872C4700E5FBFA /* UPLoadAPIData.swift in Sources */,
+				AF331318218634CB00E5FBFA /* SingletonURLRequest.swift in Sources */,
 				AFBAFD29217DB9E000BA6C6C /* TextEditViewController.swift in Sources */,
 				AFA8AAF42178F12E00D2E80C /* LoginViewController.swift in Sources */,
+				AF33131A21871D2200E5FBFA /* CreateAPIData.swift in Sources */,
+				AF3313162181BCF800E5FBFA /* SendAPIData.swift in Sources */,
+				AF33130F21804C7400E5FBFA /* ReadAPIData.swift in Sources */,
 				AFA8AAFA2178F12E00D2E80C /* PlacticeNet.xcdatamodeld in Sources */,
 				AFA8AAF22178F12E00D2E80C /* AppDelegate.swift in Sources */,
 				AFBAFD262179ECF200BA6C6C /* TweetTableViewCell.swift in Sources */,
+				AF33131421804E1200E5FBFA /* Const.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
