@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol EditCell {
+protocol CellsIdType {
     func pushEditCellView(indexPathRow: Int)
     func removeCell(indexPathRow: Int)
 }
@@ -18,7 +18,7 @@ class TweetTableViewCell: UITableViewCell {
     @IBOutlet weak var deleteItem: UIButton!
     @IBOutlet weak var editItem: UIButton!
     var textID: Int?
-    var editCellDelegate: EditCell?
+    var cellsIdType: CellsIdType?
     var readAPIData: ReadAPIData = ReadAPIData()
     var tableReloadDelegate: TableReloadDelegate?
     
@@ -33,12 +33,12 @@ class TweetTableViewCell: UITableViewCell {
     // 指定のCellの文字編集画面に遷移を親Viewに委譲
     @IBAction func editButton(_ sender: UIButton) {
         tableReloadDelegate?.reloadData()
-        editCellDelegate?.pushEditCellView(indexPathRow: editItem.tag)
+        cellsIdType?.pushEditCellView(indexPathRow: editItem.tag)
     }
     
     // 指定のCellを削除、を親Viewに委譲
     @IBAction func deleteButton(_ sender: UIButton) {
         tableReloadDelegate?.reloadData()
-        editCellDelegate?.removeCell(indexPathRow: deleteItem.tag)
+        cellsIdType?.removeCell(indexPathRow: deleteItem.tag)
     }
 }

@@ -48,11 +48,12 @@ class TextEditViewController: UIViewController, UITextViewDelegate {
         
         if indexPath != nil {
             if let tweetString = textView.text {
-                tableViewDataSouce.messageContents[indexPath!] = tweetString // nil無しの条件のためアンラップを許容
-                let tweetID = tableViewDataSouce.textIDArray[indexPath!]
-                upLoadType?.putMessage(tweet: tweetString, textID: tweetID)
-                tableReloadDelegate?.reloadData()
-                dismiss(animated: true, completion: nil)
+                tableViewDataSouce.contentsInfoModel[indexPath!].contents = tweetString // nil無しの条件のためアンラップを許容
+                if let tweetID = tableViewDataSouce.contentsInfoModel[indexPath!].id {
+                    upLoadType?.putMessage(tweet: tweetString, textID: tweetID)
+                    tableReloadDelegate?.reloadData()
+                    dismiss(animated: true, completion: nil)
+                }
             }
         // TableViewのCellが特定出来ない場合は操作やり直し
         } else {

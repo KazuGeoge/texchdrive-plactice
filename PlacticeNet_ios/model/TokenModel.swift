@@ -8,8 +8,7 @@
 
 import UIKit
 
-// TO DO Jsonの受け取りをCodableで出来ないか
-class BaseContents: Codable {
+struct TokenModel: Codable {
     
     var token: String
     

@@ -12,16 +12,15 @@ class UPLoadAPIData: UpLoadType{
     
     func putMessage(tweet: String, textID: Int) {
         
-        let tweetDic:[String: String] = ["contents": tweet]
-        SingletonURLRequest.upLoadMessage(textID: textID)
-        SingletonURLRequest.req.httpBody = try? JSONSerialization.data(withJSONObject: tweetDic)
-        // TODO: 以下他クラスとまとめられないか
-        URLSession.shared.dataTask(with: SingletonURLRequest.req) { (data, responce, error) in
-            
+        if let req =  SingletonURLRequest.upLoadMessage(textID: textID, editedContent: tweet) {
+       
+        URLSession.shared.dataTask(with: req) { (data, responce, error) in
+          
             if error != nil {
                 print(error!.localizedDescription) // nil無しの条件のため!を許容
                 }
             }
             .resume()
+        }
     }
 }

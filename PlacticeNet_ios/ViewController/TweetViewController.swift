@@ -20,7 +20,7 @@ protocol DeleteType {
     func deleteMessage(textID: Int)
 }
 
-class TweetViewController: UIViewController, UITextViewDelegate, EditCell, TableReloadDelegate, SetMessageDelegate, NewMessageDelegate {
+class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, TableReloadDelegate, SetMessageDelegate, NewMessageDelegate {
  
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var tableView: UITableView!
@@ -44,7 +44,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
     var getAllType: GetAllType?
     var createType: CreateType?
     var newMessageDelegate: NewMessageDelegate?
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -77,7 +77,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
     
     // tableView,textView以外のDelegateの設定
     private func setDelegate() {
-        tableViewDataSouce.editCell = self
+        tableViewDataSouce.tweetViewController = self
         readAPIData.setMessageDelegate = self
         createAPIData.newMessageDelegate = self
         getAllType = readAPIData
@@ -87,11 +87,9 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
     }
     
     // 全取得したContentsをtableViewDataSouceにセットする
-    func setMessageData(content: [String], id: [Int]) {
-        tableViewDataSouce.messageContents = []
-        tableViewDataSouce.textIDArray = []
-        tableViewDataSouce.messageContents = content
-        tableViewDataSouce.textIDArray = id
+    func setMessageData(messageInfo: [ContentsInfoModel]) {
+        tableViewDataSouce.contentsInfoModel = []
+        tableViewDataSouce.contentsInfoModel = messageInfo
         tableView.reloadData()
     }
    
@@ -149,9 +147,8 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
     }
     
     // 投稿したContentsのidと内容をtableViewDataSouceの先頭にセットする
-    func setNewMessageData(content: String, textID: Int) {
-        tableViewDataSouce.messageContents.insert(content, at: 0)
-        tableViewDataSouce.textIDArray.insert(textID, at: 0)
+    func setNewMessageData(content: ContentsInfoModel) {
+        tableViewDataSouce.contentsInfoModel.insert(content, at: 0)
         tableView.reloadData()
     }
     
@@ -169,7 +166,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         
         if let textEditView = mainStoryboard.instantiateViewController(withIdentifier: "TextView") as? TextEditViewController {
             textEditView.tableViewDataSouce = tableViewDataSouce
-            textEditView.editMessage = tableViewDataSouce.messageContents[indexPathRow]
+            textEditView.editMessage = tableViewDataSouce.contentsInfoModel[indexPathRow].contents
             textEditView.indexPath = indexPathRow
             textEditView.tableReloadDelegate = self
             present(textEditView, animated: true, completion: nil)
@@ -188,11 +185,11 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         alertController.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         // OKボタン
         alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: { OKAction in
-            self.tableViewDataSouce.messageContents.remove(at: indexPathRow)
-            let tweetID = self.tableViewDataSouce.textIDArray[indexPathRow]
-            self.tableViewDataSouce.textIDArray.remove(at: indexPathRow)
-            self.deleteType?.deleteMessage(textID: tweetID)
-            self.tableView.reloadData()
+            if let textID = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                self.deleteType?.deleteMessage(textID: textID)
+                self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
+                self.tableView.reloadData()
+                    }
                 }
             )
         )

@@ -11,11 +11,8 @@ import UIKit
 class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
 
     let sectionTitle = ["ツイート"]
-    var messageContents: [String] = []
-    var textIDArray: [Int] = []
-    var contentsList: [BaseContents] = []
-    // TODO: TweetVCを入れる方法が他にないか
-    var editCell: EditCell?
+    var contentsInfoModel: [ContentsInfoModel] = []
+    var tweetViewController: CellsIdType?
     
     // セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,20 +26,19 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     // cellの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageContents.count
+        return contentsInfoModel.count
     }
     
     //cellの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
-            let contentString = messageContents[indexPath.row]
-            let contentID = textIDArray[indexPath.row] 
-            cell.textLabel?.text = contentString
+            let messageInfo = contentsInfoModel[indexPath.row]
+            cell.textLabel?.text = messageInfo.contents
             cell.textLabel?.font = UIFont.systemFont(ofSize: 12)
             cell.textLabel?.numberOfLines = 10
-            cell.editCellDelegate = editCell
-            cell.textID = contentID
+            cell.cellsIdType = tweetViewController
+            cell.textID = messageInfo.id
             // 行数把握のため各ボタンのtagにindex番号を渡す
             cell.deleteItem.tag = indexPath.row
             cell.editItem.tag = indexPath.row

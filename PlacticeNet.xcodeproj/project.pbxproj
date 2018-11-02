@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		AF33130F21804C7400E5FBFA /* ReadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33130E21804C7400E5FBFA /* ReadAPIData.swift */; };
-		AF33131221804E0300E5FBFA /* BaseContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131121804E0300E5FBFA /* BaseContents.swift */; };
+		AF33131221804E0300E5FBFA /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131121804E0300E5FBFA /* TokenModel.swift */; };
 		AF33131421804E1200E5FBFA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131321804E1200E5FBFA /* Const.swift */; };
 		AF3313162181BCF800E5FBFA /* SendAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3313152181BCF800E5FBFA /* SendAPIData.swift */; };
 		AF331318218634CB00E5FBFA /* SingletonURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */; };
@@ -26,11 +26,12 @@
 		AFBAFD262179ECF200BA6C6C /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */; };
 		AFBAFD272179ECF200BA6C6C /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */; };
 		AFBAFD29217DB9E000BA6C6C /* TextEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAFD28217DB9E000BA6C6C /* TextEditViewController.swift */; };
+		AFD174F1218C2D04009CEAF3 /* ContentsInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD174F0218C2D04009CEAF3 /* ContentsInfoModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF33130E21804C7400E5FBFA /* ReadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadAPIData.swift; sourceTree = "<group>"; };
-		AF33131121804E0300E5FBFA /* BaseContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContents.swift; sourceTree = "<group>"; };
+		AF33131121804E0300E5FBFA /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		AF33131321804E1200E5FBFA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		AF3313152181BCF800E5FBFA /* SendAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAPIData.swift; sourceTree = "<group>"; };
 		AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonURLRequest.swift; sourceTree = "<group>"; };
@@ -50,6 +51,7 @@
 		AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		AFBAFD28217DB9E000BA6C6C /* TextEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditViewController.swift; sourceTree = "<group>"; };
+		AFD174F0218C2D04009CEAF3 /* ContentsInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsInfoModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +68,10 @@
 		AF33131021804DA500E5FBFA /* model */ = {
 			isa = PBXGroup;
 			children = (
-				AF33131121804E0300E5FBFA /* BaseContents.swift */,
+				AF33131121804E0300E5FBFA /* TokenModel.swift */,
+				AFD174F0218C2D04009CEAF3 /* ContentsInfoModel.swift */,
 				AF33131321804E1200E5FBFA /* Const.swift */,
+				AFD174F2218C49BE009CEAF3 /* APIModel */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -86,12 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				AFBAFD212179CBBA00BA6C6C /* TableViewDataSouce.swift */,
-				AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */,
-				AF3313152181BCF800E5FBFA /* SendAPIData.swift */,
-				AF33130E21804C7400E5FBFA /* ReadAPIData.swift */,
-				AF33131921871D2200E5FBFA /* CreateAPIData.swift */,
-				AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */,
-				AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */,
+				AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */,
+				AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */,
 			);
 			name = Views;
 			path = cells;
@@ -118,7 +118,6 @@
 			children = (
 				AFA58288217F2BD400C67CB1 /* ViewController */,
 				AFA5828B217F2C4100C67CB1 /* Views */,
-				AFBAFD202179CB8100BA6C6C /* cells */,
 				AF33131021804DA500E5FBFA /* model */,
 				AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */,
 				AFA8AAF52178F12E00D2E80C /* Main.storyboard */,
@@ -130,14 +129,17 @@
 			path = PlacticeNet_ios;
 			sourceTree = "<group>";
 		};
-		AFBAFD202179CB8100BA6C6C /* cells */ = {
+		AFD174F2218C49BE009CEAF3 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
-				AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */,
-				AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */,
+				AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */,
+				AF3313152181BCF800E5FBFA /* SendAPIData.swift */,
+				AF33130E21804C7400E5FBFA /* ReadAPIData.swift */,
+				AF33131921871D2200E5FBFA /* CreateAPIData.swift */,
+				AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */,
+				AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */,
 			);
-			name = cells;
-			path = Views;
+			path = APIModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,7 +215,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF33131E2187313D00E5FBFA /* DeleteAPIData.swift in Sources */,
-				AF33131221804E0300E5FBFA /* BaseContents.swift in Sources */,
+				AF33131221804E0300E5FBFA /* TokenModel.swift in Sources */,
 				AFA8AB0721799E9500D2E80C /* TweetViewController.swift in Sources */,
 				AFBAFD222179CBBA00BA6C6C /* TableViewDataSouce.swift in Sources */,
 				AF33131C21872C4700E5FBFA /* UPLoadAPIData.swift in Sources */,
@@ -225,6 +227,7 @@
 				AF33130F21804C7400E5FBFA /* ReadAPIData.swift in Sources */,
 				AFA8AAFA2178F12E00D2E80C /* PlacticeNet.xcdatamodeld in Sources */,
 				AFA8AAF22178F12E00D2E80C /* AppDelegate.swift in Sources */,
+				AFD174F1218C2D04009CEAF3 /* ContentsInfoModel.swift in Sources */,
 				AFBAFD262179ECF200BA6C6C /* TweetTableViewCell.swift in Sources */,
 				AF33131421804E1200E5FBFA /* Const.swift in Sources */,
 			);
