@@ -11,11 +11,9 @@ import UIKit
 // TO DO Jsonの受け取りをCodableで出来ないか
 class BaseContents: Codable {
     
-    var contents: String
     var token: String
     
-    init(contents: String, token: String) {
-        self.contents = contents
+    init(token: String) {
         self.token = token
     }
 }

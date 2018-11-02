@@ -186,7 +186,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/LoginViewController.swift"
-            timestampString = "562745860.779682"
+            timestampString = "562799947.3909"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "68"
@@ -202,7 +202,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/LoginViewController.swift"
-            timestampString = "562745860.7797771"
+            timestampString = "562799947.390973"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "70"
@@ -218,7 +218,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/LoginViewController.swift"
-            timestampString = "562745860.779824"
+            timestampString = "562799947.391026"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -234,7 +234,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/LoginViewController.swift"
-            timestampString = "562745860.779863"
+            timestampString = "562799947.391143"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "64"
@@ -250,7 +250,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.779925"
+            timestampString = "562799947.3911951"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -266,23 +266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.7799751"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "postMail(mailAddress:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.780026"
+            timestampString = "562799947.39169"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -330,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.780061"
+            timestampString = "562799947.392037"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "46"
+            endingLineNumber = "46"
             landmarkName = "postMail(mailAddress:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -346,11 +330,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.780102"
+            timestampString = "562799947.392357"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "postMail(mailAddress:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,7 +346,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780159"
+            timestampString = "562799947.392892"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -378,7 +362,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780213"
+            timestampString = "562799947.392993"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -426,7 +410,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.7802449"
+            timestampString = "562799947.393072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
@@ -442,12 +426,12 @@
                   moduleName = "PlacticeNet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joujimaikki/Documents/GitHub/texchdrive-plactice/PlacticeNet_ios/cells/ReadAPIData.swift"
-                  timestampString = "562665606.427884"
+                  timestampString = "562799947.591592"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "24"
-                  endingLineNumber = "24"
-                  offsetFromSymbolStart = "64">
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "57">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -457,12 +441,12 @@
                   moduleName = "PlacticeNet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joujimaikki/Documents/GitHub/texchdrive-plactice/PlacticeNet_ios/cells/ReadAPIData.swift"
-                  timestampString = "562665606.4302469"
+                  timestampString = "562799947.595247"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "26"
-                  endingLineNumber = "26"
-                  offsetFromSymbolStart = "76">
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "94">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -474,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780277"
+            timestampString = "562799947.393151"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "26"
@@ -490,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.78031"
+            timestampString = "562799947.393218"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -506,7 +490,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780341"
+            timestampString = "562799947.3932821"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -522,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780373"
+            timestampString = "562799947.393352"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "23"
@@ -538,7 +522,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780413"
+            timestampString = "562799947.393418"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "22"
@@ -554,7 +538,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780445"
+            timestampString = "562799947.393465"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "31"
@@ -570,7 +554,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.78048"
+            timestampString = "562799947.393513"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
@@ -586,12 +570,12 @@
                   moduleName = "PlacticeNet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joujimaikki/Documents/GitHub/texchdrive-plactice/PlacticeNet_ios/cells/ReadAPIData.swift"
-                  timestampString = "562665606.441856"
+                  timestampString = "562799947.619084"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "46"
-                  endingLineNumber = "46"
-                  offsetFromSymbolStart = "3608">
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "4673">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -601,12 +585,12 @@
                   moduleName = "PlacticeNet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joujimaikki/Documents/GitHub/texchdrive-plactice/PlacticeNet_ios/cells/ReadAPIData.swift"
-                  timestampString = "562665606.443455"
+                  timestampString = "562799947.621233"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "47"
-                  endingLineNumber = "47"
-                  offsetFromSymbolStart = "28">
+                  startingLineNumber = "49"
+                  endingLineNumber = "49"
+                  offsetFromSymbolStart = "29">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -618,7 +602,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.780512"
+            timestampString = "562799947.393592"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -630,11 +614,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.780542"
+            timestampString = "562799947.394009"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "30"
@@ -646,11 +630,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.7805721"
+            timestampString = "562799947.39439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -662,11 +646,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.780602"
+            timestampString = "562799947.394914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
@@ -682,27 +666,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.780632"
+            timestampString = "562799947.395342"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "postMail(mailAddress:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.780664"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "postMail(mailAddress:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -714,7 +682,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780705"
+            timestampString = "562799947.395762"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -730,7 +698,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.780892"
+            timestampString = "562799947.3958271"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -746,7 +714,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.7809401"
+            timestampString = "562799947.395876"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "32"
@@ -762,7 +730,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.780986"
+            timestampString = "562799947.395926"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "21"
@@ -778,7 +746,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/DeleteAPIData.swift"
-            timestampString = "562745860.781042"
+            timestampString = "562799947.395969"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "17"
@@ -794,7 +762,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/DeleteAPIData.swift"
-            timestampString = "562745860.781082"
+            timestampString = "562799947.396004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "19"
@@ -842,7 +810,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SingletonURLRequest.swift"
-            timestampString = "562745860.781135"
+            timestampString = "562772932.663775"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -858,7 +826,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.78169"
+            timestampString = "562799947.396072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -874,7 +842,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.781745"
+            timestampString = "562799947.3961149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "38"
@@ -890,7 +858,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.7817841"
+            timestampString = "562799947.396188"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
@@ -906,7 +874,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.781816"
+            timestampString = "562799947.396243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "46"
@@ -922,11 +890,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
-            timestampString = "562745860.781853"
+            timestampString = "562772932.664722"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "194"
-            endingLineNumber = "194"
+            startingLineNumber = "198"
+            endingLineNumber = "198"
             landmarkName = "removeCell(indexPathRow:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -938,11 +906,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
-            timestampString = "562745860.781906"
+            timestampString = "562772932.664806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "196"
+            endingLineNumber = "196"
             landmarkName = "removeCell(indexPathRow:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -954,7 +922,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.781955"
+            timestampString = "562799947.396461"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -970,11 +938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TextEditViewController.swift"
-            timestampString = "562745860.781999"
+            timestampString = "562772932.6649899"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "54"
-            endingLineNumber = "54"
+            startingLineNumber = "52"
+            endingLineNumber = "52"
             landmarkName = "setEditedText(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -986,13 +954,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
-            timestampString = "562745860.782035"
+            timestampString = "562772932.665049"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "tweetButtonAction(_:)"
-            landmarkType = "7">
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "TweetViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1002,7 +970,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.782087"
+            timestampString = "562799947.396597"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
@@ -1018,23 +986,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
-            timestampString = "562745860.782122"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
-            timestampString = "562745860.782154"
+            timestampString = "562772932.66521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "44"
@@ -1046,11 +998,27 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
+            timestampString = "562772932.665261"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.782185"
+            timestampString = "562799947.396691"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -1066,7 +1034,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.782217"
+            timestampString = "562799947.396737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -1082,12 +1050,12 @@
                   moduleName = "PlacticeNet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joujimaikki/Documents/GitHub/texchdrive-plactice/PlacticeNet_ios/cells/CreateAPIData.swift"
-                  timestampString = "562665606.466483"
+                  timestampString = "562799947.70535"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "27"
                   endingLineNumber = "27"
-                  offsetFromSymbolStart = "752">
+                  offsetFromSymbolStart = "965">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -1097,12 +1065,12 @@
                   moduleName = "PlacticeNet"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/joujimaikki/Documents/GitHub/texchdrive-plactice/PlacticeNet_ios/cells/CreateAPIData.swift"
-                  timestampString = "562665606.4679821"
+                  timestampString = "562799947.709203"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "29"
                   endingLineNumber = "29"
-                  offsetFromSymbolStart = "68">
+                  offsetFromSymbolStart = "80">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1114,7 +1082,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.782254"
+            timestampString = "562799947.3967789"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "29"
@@ -1130,7 +1098,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/Views/TweetTableViewCell.swift"
-            timestampString = "562666767.56698"
+            timestampString = "562772932.665463"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -1146,7 +1114,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/ReadAPIData.swift"
-            timestampString = "562745860.782344"
+            timestampString = "562799947.396866"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "49"
@@ -1162,12 +1130,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
-            timestampString = "562745860.782383"
+            timestampString = "562772932.66557"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "153"
-            endingLineNumber = "153"
-            landmarkName = "setNewMessageData(content:textID:)"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
+            landmarkName = "tweetButtonAction(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1178,13 +1146,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
-            timestampString = "562745860.782434"
+            timestampString = "562772932.665647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
-            landmarkName = "setNewMessageData(content:textID:)"
-            landmarkType = "7">
+            startingLineNumber = "158"
+            endingLineNumber = "158"
+            landmarkName = "TweetViewController"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1194,7 +1162,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.7824841"
+            timestampString = "562799947.396968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -1210,7 +1178,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.78253"
+            timestampString = "562799947.397015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -1226,7 +1194,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.78259"
+            timestampString = "562799947.3970571"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -1238,11 +1206,11 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
-            timestampString = "562745860.782642"
+            timestampString = "562799947.397097"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "34"
@@ -1258,12 +1226,92 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/CreateAPIData.swift"
-            timestampString = "562745860.782699"
+            timestampString = "562799947.397424"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "36"
             endingLineNumber = "36"
             landmarkName = "createMessage(tweet:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
+            timestampString = "562799947.39747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "postMail(mailAddress:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
+            timestampString = "562799947.397704"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "postMail(mailAddress:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
+            timestampString = "562799947.397952"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "postMail(mailAddress:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
+            timestampString = "562799947.398199"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "postMail(mailAddress:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlacticeNet_ios/cells/SendAPIData.swift"
+            timestampString = "562799947.398407"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "postMail(mailAddress:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -26,7 +26,7 @@ class SingletonURLRequest {
         req.httpMethod = "POST"
         req.setValue("application/json", forHTTPHeaderField: "Content-Type")
         req.url = loginURL
-        req.httpBody = try? JSONSerialization.data(withJSONObject: mailAdress)
+        req.httpBody = try? JSONEncoder().encode(mailAdress)
     }
     
     // 全てのContentsを取得する

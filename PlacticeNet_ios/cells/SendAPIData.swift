@@ -33,9 +33,7 @@ class SendAPIData: LoginType {
             
             // TODO: Codableが使えないか
             guard let data = data,
-                
-                let json = try? JSONSerialization.jsonObject(with: data),
-                let repos = json as? [String: String] else {
+                let jsonData = try? JSONDecoder().decode(BaseContents.self, from: data) else {
                     return
             }
             
@@ -46,7 +44,7 @@ class SendAPIData: LoginType {
                     if responce.statusCode == 200 {
                         self.logInDelegate?.logInView()
                         // 返ってきたトークンをSingletonのreqのヘッダーにセット
-                        SingletonURLRequest.req.setValue(repos["token"] ?? "", forHTTPHeaderField: "Authorization")
+                        print("token:\(jsonData.token)")
                     } else {
                         self.errorType?.alertErrorMessage()
                     }
