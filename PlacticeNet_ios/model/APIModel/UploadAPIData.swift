@@ -8,11 +8,11 @@
 
 import UIKit
 
-class UPLoadAPIData: UpLoadType{
+class UploadAPIData: UploadType{
     
-    func putMessage(tweet: String, textID: Int) {
+    func putMessage(tweet: String, textid: Int) {
         
-        if let req =  SingletonURLRequest.upLoadMessage(textID: textID, editedContent: tweet) {
+        if let req =  SingletonURLRequest.uploadMessage(textID: textid, editedContent: tweet) {
        
         URLSession.shared.dataTask(with: req) { (data, responce, error) in
           

@@ -37,7 +37,7 @@ class ReadAPIData: GetAllType {
                     self.setMessageDelegate?.setMessageData(messageInfo: json)
                 }
             }
-                .resume()
+            .resume()
         }
     }
 }

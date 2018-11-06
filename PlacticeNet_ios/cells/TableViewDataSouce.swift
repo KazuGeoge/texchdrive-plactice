@@ -13,6 +13,8 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
     let sectionTitle = ["ツイート"]
     var contentsInfoModel: [ContentsInfoModel] = []
     var tweetViewController: CellsIdType?
+    var resistedImage: UIImage?
+    var fixNumber: Int?
     
     // セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -33,15 +35,16 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
-            let messageInfo = contentsInfoModel[indexPath.row]
-            cell.textLabel?.text = messageInfo.contents
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 12)
-            cell.textLabel?.numberOfLines = 10
             cell.cellsIdType = tweetViewController
-            cell.textID = messageInfo.id
-            // 行数把握のため各ボタンのtagにindex番号を渡す
-            cell.deleteItem.tag = indexPath.row
-            cell.editItem.tag = indexPath.row
+            cell.setCell(content: contentsInfoModel[indexPath.row], indexPathRow: indexPath.row)
+            
+//            // 画像の追加があった場合はここで追加する
+//            if indexPath.row == fixNumber {
+//                if resistedImage != nil {
+//                    cell.thumbnail.image = resistedImage
+//                }
+//            }
+            
             return cell
         }
         return UITableViewCell()

@@ -84,6 +84,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         createType = createAPIData
         deleteType = deleteAPIData
         getAllType?.getAllMessage()
+        
     }
     
     // 全取得したContentsをtableViewDataSouceにセットする
@@ -185,8 +186,8 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         alertController.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         // OKボタン
         alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: { OKAction in
-            if let textID = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
-                self.deleteType?.deleteMessage(textID: textID)
+            if let textid = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                self.deleteType?.deleteMessage(textID: textid)
                 self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
                 self.tableView.reloadData()
                     }

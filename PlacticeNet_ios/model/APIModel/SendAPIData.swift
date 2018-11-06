@@ -50,7 +50,7 @@ class SendAPIData: LoginType {
                     }
                 }
             }
-                .resume()
+            .resume()
         }
     }
 }

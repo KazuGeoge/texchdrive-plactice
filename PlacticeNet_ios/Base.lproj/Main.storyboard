@@ -155,17 +155,38 @@
                                     <action selector="cancelEditedText:" destination="ere-ut-Ae4" eventType="touchUpInside" id="N6I-K1-5K7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lq-UR-Eng">
+                                <rect key="frame" x="149" y="290" width="77" height="30"/>
+                                <state key="normal" title="画像を追加"/>
+                                <connections>
+                                    <action selector="choosePictureButton:" destination="PlT-Wh-Uhh" eventType="touchUpInside" id="SFT-4G-dui"/>
+                                    <action selector="choosePictureButton:" destination="ere-ut-Ae4" eventType="touchUpInside" id="TH3-cZ-bN8"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TrK-Iu-Rw7">
+                                <rect key="frame" x="149" y="330" width="77" height="30"/>
+                                <state key="normal" title="写真を撮る"/>
+                                <connections>
+                                    <action selector="startCamera:" destination="ere-ut-Ae4" eventType="touchUpInside" id="ShK-ky-gn6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="TrK-Iu-Rw7" firstAttribute="width" secondItem="4lq-UR-Eng" secondAttribute="width" id="1Cw-Oe-5TX"/>
+                            <constraint firstItem="4lq-UR-Eng" firstAttribute="centerY" secondItem="FZ6-mV-xyi" secondAttribute="centerY" id="6Vl-H6-lAE"/>
                             <constraint firstItem="28S-SF-fDf" firstAttribute="top" secondItem="jc0-W6-Oir" secondAttribute="top" constant="10" id="9Ag-Ey-8NX"/>
+                            <constraint firstItem="TrK-Iu-Rw7" firstAttribute="centerX" secondItem="4lq-UR-Eng" secondAttribute="centerX" id="Axz-p7-svZ"/>
                             <constraint firstItem="28S-SF-fDf" firstAttribute="leading" secondItem="jc0-W6-Oir" secondAttribute="leading" constant="10" id="GV4-I6-Wrr"/>
+                            <constraint firstItem="4lq-UR-Eng" firstAttribute="centerX" secondItem="28S-SF-fDf" secondAttribute="centerX" id="Obl-4R-ttz"/>
                             <constraint firstItem="4Gr-Xg-3gc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FZ6-mV-xyi" secondAttribute="trailing" constant="8" symbolic="YES" id="Xah-04-olr"/>
                             <constraint firstItem="4Gr-Xg-3gc" firstAttribute="top" secondItem="28S-SF-fDf" secondAttribute="bottom" constant="10" id="ZkP-8P-eYd"/>
+                            <constraint firstItem="4Gr-Xg-3gc" firstAttribute="centerY" secondItem="FZ6-mV-xyi" secondAttribute="centerY" id="Zze-1m-xGV"/>
                             <constraint firstItem="FZ6-mV-xyi" firstAttribute="top" secondItem="28S-SF-fDf" secondAttribute="bottom" constant="10" id="f88-GA-4xD"/>
                             <constraint firstItem="jc0-W6-Oir" firstAttribute="trailing" secondItem="28S-SF-fDf" secondAttribute="trailing" constant="10" id="kT9-cP-WB5"/>
                             <constraint firstItem="jc0-W6-Oir" firstAttribute="trailing" secondItem="4Gr-Xg-3gc" secondAttribute="trailing" constant="10" id="mau-Ui-3z3"/>
                             <constraint firstItem="FZ6-mV-xyi" firstAttribute="leading" secondItem="jc0-W6-Oir" secondAttribute="leading" constant="10" id="ndc-kj-3XD"/>
+                            <constraint firstItem="TrK-Iu-Rw7" firstAttribute="top" secondItem="4lq-UR-Eng" secondAttribute="bottom" constant="10" id="wsc-3D-dlQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="jc0-W6-Oir"/>
                     </view>
@@ -174,6 +195,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lux-6b-Lku" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="PlT-Wh-Uhh" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1528.8" y="44.527736131934034"/>
         </scene>

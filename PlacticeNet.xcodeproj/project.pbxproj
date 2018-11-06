@@ -13,7 +13,7 @@
 		AF3313162181BCF800E5FBFA /* SendAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3313152181BCF800E5FBFA /* SendAPIData.swift */; };
 		AF331318218634CB00E5FBFA /* SingletonURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */; };
 		AF33131A21871D2200E5FBFA /* CreateAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131921871D2200E5FBFA /* CreateAPIData.swift */; };
-		AF33131C21872C4700E5FBFA /* UPLoadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */; };
+		AF33131C21872C4700E5FBFA /* UploadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131B21872C4700E5FBFA /* UploadAPIData.swift */; };
 		AF33131E2187313D00E5FBFA /* DeleteAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */; };
 		AFA8AAF22178F12E00D2E80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */; };
 		AFA8AAF42178F12E00D2E80C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AAF32178F12E00D2E80C /* LoginViewController.swift */; };
@@ -22,11 +22,13 @@
 		AFA8AAFC2178F13000D2E80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA8AAFB2178F13000D2E80C /* Assets.xcassets */; };
 		AFA8AAFF2178F13000D2E80C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA8AAFD2178F13000D2E80C /* LaunchScreen.storyboard */; };
 		AFA8AB0721799E9500D2E80C /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AB0621799E9500D2E80C /* TweetViewController.swift */; };
+		AFB47697218EC6C200187474 /* ImageAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47696218EC6C200187474 /* ImageAPIModel.swift */; };
 		AFBAFD222179CBBA00BA6C6C /* TableViewDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAFD212179CBBA00BA6C6C /* TableViewDataSouce.swift */; };
 		AFBAFD262179ECF200BA6C6C /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */; };
 		AFBAFD272179ECF200BA6C6C /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */; };
 		AFBAFD29217DB9E000BA6C6C /* TextEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAFD28217DB9E000BA6C6C /* TextEditViewController.swift */; };
 		AFD174F1218C2D04009CEAF3 /* ContentsInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD174F0218C2D04009CEAF3 /* ContentsInfoModel.swift */; };
+		AFFFFAB221902E1000EEA67B /* ImageUploadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFFAB121902E1000EEA67B /* ImageUploadAPIData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,7 +38,7 @@
 		AF3313152181BCF800E5FBFA /* SendAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAPIData.swift; sourceTree = "<group>"; };
 		AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonURLRequest.swift; sourceTree = "<group>"; };
 		AF33131921871D2200E5FBFA /* CreateAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAPIData.swift; sourceTree = "<group>"; };
-		AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPLoadAPIData.swift; sourceTree = "<group>"; };
+		AF33131B21872C4700E5FBFA /* UploadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAPIData.swift; sourceTree = "<group>"; };
 		AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAPIData.swift; sourceTree = "<group>"; };
 		AFA8AAEE2178F12E00D2E80C /* PlacticeNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacticeNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -47,11 +49,13 @@
 		AFA8AAFE2178F13000D2E80C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFA8AB002178F13000D2E80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA8AB0621799E9500D2E80C /* TweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		AFB47696218EC6C200187474 /* ImageAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIModel.swift; sourceTree = "<group>"; };
 		AFBAFD212179CBBA00BA6C6C /* TableViewDataSouce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSouce.swift; sourceTree = "<group>"; };
 		AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		AFBAFD28217DB9E000BA6C6C /* TextEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditViewController.swift; sourceTree = "<group>"; };
 		AFD174F0218C2D04009CEAF3 /* ContentsInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsInfoModel.swift; sourceTree = "<group>"; };
+		AFFFFAB121902E1000EEA67B /* ImageUploadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadAPIData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +141,9 @@
 				AF33130E21804C7400E5FBFA /* ReadAPIData.swift */,
 				AF33131921871D2200E5FBFA /* CreateAPIData.swift */,
 				AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */,
-				AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */,
+				AF33131B21872C4700E5FBFA /* UploadAPIData.swift */,
+				AFB47696218EC6C200187474 /* ImageAPIModel.swift */,
+				AFFFFAB121902E1000EEA67B /* ImageUploadAPIData.swift */,
 			);
 			path = APIModel;
 			sourceTree = "<group>";
@@ -218,7 +224,7 @@
 				AF33131221804E0300E5FBFA /* TokenModel.swift in Sources */,
 				AFA8AB0721799E9500D2E80C /* TweetViewController.swift in Sources */,
 				AFBAFD222179CBBA00BA6C6C /* TableViewDataSouce.swift in Sources */,
-				AF33131C21872C4700E5FBFA /* UPLoadAPIData.swift in Sources */,
+				AF33131C21872C4700E5FBFA /* UploadAPIData.swift in Sources */,
 				AF331318218634CB00E5FBFA /* SingletonURLRequest.swift in Sources */,
 				AFBAFD29217DB9E000BA6C6C /* TextEditViewController.swift in Sources */,
 				AFA8AAF42178F12E00D2E80C /* LoginViewController.swift in Sources */,
@@ -227,6 +233,8 @@
 				AF33130F21804C7400E5FBFA /* ReadAPIData.swift in Sources */,
 				AFA8AAFA2178F12E00D2E80C /* PlacticeNet.xcdatamodeld in Sources */,
 				AFA8AAF22178F12E00D2E80C /* AppDelegate.swift in Sources */,
+				AFFFFAB221902E1000EEA67B /* ImageUploadAPIData.swift in Sources */,
+				AFB47697218EC6C200187474 /* ImageAPIModel.swift in Sources */,
 				AFD174F1218C2D04009CEAF3 /* ContentsInfoModel.swift in Sources */,
 				AFBAFD262179ECF200BA6C6C /* TweetTableViewCell.swift in Sources */,
 				AF33131421804E1200E5FBFA /* Const.swift in Sources */,

@@ -11,8 +11,4 @@ import UIKit
 struct TokenModel: Codable {
     
     var token: String
-    
-    init(token: String) {
-        self.token = token
-    }
 }

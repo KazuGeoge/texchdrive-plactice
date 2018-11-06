@@ -12,9 +12,5 @@ struct ContentsInfoModel: Codable {
 
     var contents: String?
     var id: Int?
-    
-    init(contents: String, id: Int) {
-        self.contents = contents
-        self.id = id
-    }
+    var url: String?
 }

@@ -14,8 +14,6 @@ protocol NewMessageDelegate {
 
 class CreateAPIData: CreateType {
     
-    var contents:[String] = []
-    var idIndex:[Int] = []
     var newMessageDelegate: NewMessageDelegate?
     
     func createMessage(tweet: String) {
@@ -32,13 +30,13 @@ class CreateAPIData: CreateType {
                 }
                 
                 guard let data = data,
-                    let json = try? JSONDecoder().decode(ContentsInfoModel.self, from: data) else {
+                    let jsonContentsInfoModelArray = try? JSONDecoder().decode(ContentsInfoModel.self, from: data) else {
                         return
                 }
                 
                 DispatchQueue.main.sync {
                     // 返ってきたMessage情報をセット
-                    self.newMessageDelegate?.setNewMessageData(content: json)
+                    self.newMessageDelegate?.setNewMessageData(content: jsonContentsInfoModelArray)
                 }
             }
             .resume()
