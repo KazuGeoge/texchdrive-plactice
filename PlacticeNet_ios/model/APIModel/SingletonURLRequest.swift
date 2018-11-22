@@ -18,6 +18,12 @@ class SingletonURLRequest {
     
     private init() { }
     
+    // URLSessionを開始する
+    static func dataTask(with req: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
+        let task = URLSession.shared.dataTask(with: req, completionHandler: completionHandler)
+        task.resume()
+    }
+    
     // ログインのためにメールアドレスを送信
     static func loginView(mailAddress: String) -> URLRequest? {
         
@@ -63,9 +69,9 @@ class SingletonURLRequest {
     }
     
     // 編集したContentsを送信、URLの最後に編集するContentsのidを追加
-    static func uploadMessage(textID: Int, editedContent: String) -> URLRequest?  {
+    static func uploadMessage(textId: Int, editedContent: String) -> URLRequest?  {
         
-        if let url = URL(string: Const.BASE_STRING + String(textID)) {
+        if let url = URL(string: Const.BASE_STRING + String(textId)) {
             var req = URLRequest(url: url)
             let tweetDic:[String: String] = ["contents": editedContent]
             req.httpMethod = "PUT"
@@ -77,10 +83,10 @@ class SingletonURLRequest {
         return nil
     }
     
-        // 削除するContentsを送信、URLの最後に編集するContentsのidを追加
-    static func deleteMessage(textID: Int) -> URLRequest? {
+        // 削除するContentsを送信、URLの最後に編集するContentsのIDを追加
+    static func deleteMessage(textId: Int) -> URLRequest? {
         
-        if let url = URL(string: Const.BASE_STRING + String(textID)) {
+        if let url = URL(string: Const.BASE_STRING + String(textId)) {
             var req = URLRequest(url: url)
             req.httpMethod = "DELETE"
             req.setValue(singleToken, forHTTPHeaderField: "Authorization")
@@ -91,40 +97,45 @@ class SingletonURLRequest {
         return nil
     }
     
-    static func uploadImage(textID: Int,  image: UIImage) -> URLRequest? {
+    // 選択した画像をアップロード
+    static func uploadImage(image: UIImage, textId: Int) -> URLRequest?  {
+        let boundary = "----WebKitFormBoundaryZLdHZy8HNaBmUX0d"
+        let fileName = "file.jpg"
+        if let imageData = image.jpegData(compressionQuality: 1.0) {
         
-        // 画像ファイルを作成
-        let jpgImageData = image.jpegData(compressionQuality: 1.0)
-        let documentsURL = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)[0]
-        let fileURL = documentsURL.appendingPathComponent("file.jpeg")
-        do {
-            try jpgImageData!.write(to: fileURL)
-        } catch {
-           print("書き込み失敗")
-        }
-       
-        print(UIImage(contentsOfFile: fileURL.path)!)
-//        print(fileURL.path)
-//        let str: String? = String(data: fileURL.path, encoding: .utf8)
-        print("imageファイルのString:\(fileURL.path)")
-        if let myUrl:URL = URL(string: Const.BASE_STRING + String(textID) + "/images") {
+        if let myUrl:URL = URL(string: Const.BASE_STRING + String(textId) + "/images") {
             var req = URLRequest(url: myUrl)
             req.httpMethod = "POST"
-            req.setValue("application/json", forHTTPHeaderField: "Content-Type")
             req.setValue(SingletonURLRequest.singleToken, forHTTPHeaderField: "Authorization")
-            // 画像ファイルをData型に変換しBodyに入れる
-            let data: Data? = fileURL.path.data(using: .utf8)
-            req.httpBody =  data
+            req.addValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+            // Bodyの作成
+            if var data = "--\(boundary)\r\n".data(using: .utf8) {
+                // サーバ側が想定しているinput(message[image]=image)タグのname属性値とファイル名をContent-Dispositionヘッダで設定
+                if let contentDisposition = "Content-Disposition: form-data; name=\"message[image]\"; filename=\"\(fileName)\"\r\n".data(using: .utf8) {
+                    data += contentDisposition
+                    
+                    if let contentType = "Content-Type: image/jpg\r\n".data(using: .utf8) {
+                        data += contentType
+                       
+                        if let newLine = "\r\n".data(using: .utf8) {
+                            data += newLine
+                            data += imageData
+                            
+                            if let secondNewLine =  "\r\n".data(using: .utf8) {
+                                data += secondNewLine
+                                
+                                if let thirdNewLine = "\r\n--\(boundary)--\r\n".data(using: .utf8) {
+                                    data += thirdNewLine
+                                }
+                            }
+                        }
+                    }
+                }
+                req.httpBody = data
+            }
             return req
+            }
         }
         return nil
-}
-    // TO DO: トレイリングクロージャーを理解して関数を作る
-    static func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        URLSession.shared.dataTask(with: url, completionHandler: completionHandler)
-    }
-    
-    static func sync(with url: URL, handler: @escaping (Data?, URLResponse?, Error?) -> Void) {
-        URLSession.shared.dataTask(with: url, completionHandler: handler)
     }
 }

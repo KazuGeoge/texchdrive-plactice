@@ -9,8 +9,9 @@
 import UIKit
 
 struct ContentsInfoModel: Codable {
-
+    
     var contents: String?
     var id: Int?
     var url: String?
+    var user_id: Int?
 }

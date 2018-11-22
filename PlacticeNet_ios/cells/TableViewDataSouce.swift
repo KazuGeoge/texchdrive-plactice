@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol TableDelegate {
+    func pushViewController(tweetView: UIViewController)
+}
+
 class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
 
     let sectionTitle = ["ツイート"]
     var contentsInfoModel: [ContentsInfoModel] = []
     var tweetViewController: CellsIdType?
-    var resistedImage: UIImage?
-    var fixNumber: Int?
+    var parentViewController: CellsContentType?
+    var tableDelegate: TableDelegate?
+    var imageArrayWithIndexPath: [Int: UIImage]?
+    var tweetVC: TapedImageType?
     
     // セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -35,19 +41,48 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
-            cell.cellsIdType = tweetViewController
-            cell.setCell(content: contentsInfoModel[indexPath.row], indexPathRow: indexPath.row)
             
-//            // 画像の追加があった場合はここで追加する
-//            if indexPath.row == fixNumber {
-//                if resistedImage != nil {
-//                    cell.thumbnail.image = resistedImage
-//                }
-//            }
+            //  対象のContentのID
+            if let messageId = contentsInfoModel[indexPath.row].id {
+                
+                // ContentのIDと一致するロード済みの画像がある場合にCellのthumbnailにセット
+                if let image = imageArrayWithIndexPath?[messageId] {
+                    cell.thumbnail.image = image
+                }
+            }
+            
+            cell.cellsIdType = tweetViewController
+            cell.cellsContentType = parentViewController
+            cell.tapedImageType = tweetVC
+            cell.setCell(content: contentsInfoModel[indexPath.row], indexPathRow: indexPath.row)
             
             return cell
         }
         return UITableViewCell()
+    }
+    
+     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        if let tweetDetailVC = mainStoryboard.instantiateViewController(withIdentifier: "TweetDetailView") as? TweetDetailViewController {
+           
+            tweetDetailVC.user_IdInt = contentsInfoModel[indexPath.row].user_id
+            tweetDetailVC.tweetContents = contentsInfoModel[indexPath.row].contents
+            tweetDetailVC.indexPathRow = indexPath.row
+            tweetDetailVC.cellsIdType = tweetViewController
+            tweetDetailVC.cellsContentType = parentViewController
+            tweetDetailVC.tapedImageType = tweetVC
+            tweetDetailVC.isFromTweetView = true
+            //  対象のContentのID
+            if let messageId = contentsInfoModel[indexPath.row].id {
+                // ContentのIDと一致するロード済みの画像がある場合にCellのthumbnailをセット
+                if let image = imageArrayWithIndexPath?[messageId] {
+                   tweetDetailVC.image  = image
+                }
+            }
+            tableDelegate?.pushViewController(tweetView: tweetDetailVC)
+        }
     }
     
     // cellの高さを文字量に合わせる

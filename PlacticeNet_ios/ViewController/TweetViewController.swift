@@ -17,34 +17,49 @@ protocol CreateType {
 }
 
 protocol DeleteType {
-    func deleteMessage(textID: Int)
+    func deleteMessage(textId: Int)
 }
 
-class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, TableReloadDelegate, SetMessageDelegate, NewMessageDelegate {
- 
+protocol ImageWithMessageIdType {
+    func setImage(messageInfo: [ContentsInfoModel])
+}
+
+class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, TableReloadDelegate, SetMessageDelegate, NewMessageDelegate, ToTweetViewImage, ImageDelegate, CellsContentType, TableDelegate, TapedImageType {
+   
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var takeImageOutlet: UIButton!
+    @IBOutlet weak var cameraRollOutlet: UIButton!
     @IBOutlet weak var tweetButtonOutllet: UIButton!
     @IBOutlet weak var textViewHight: NSLayoutConstraint!
     @IBOutlet weak var textViewTrailing: NSLayoutConstraint!
     @IBOutlet weak var tweetButtonTrailing: NSLayoutConstraint!
-    
+    @IBOutlet weak var tweetButtonWidth: NSLayoutConstraint!
     private var isFarstTouch = true
+    private var tweetImage: UIImage?
+    private var imageArrayWithMessageId: [Int: UIImage] = [:]
     // クラスのインスタンス
     var tableViewDataSouce: TableViewDataSouce = TableViewDataSouce()
     var tweetTableViewCell: TweetTableViewCell = TweetTableViewCell()
     var textEditView: TextEditViewController = TextEditViewController()
-    var sendAPIData: SendAPIData = SendAPIData()
+    var shareView: ShareView = ShareView()
+    var imageViewController: ImageViewController = ImageViewController()
     var readAPIData: ReadAPIData = ReadAPIData()
     var createAPIData: CreateAPIData = CreateAPIData()
     var deleteAPIData: DeleteAPIData = DeleteAPIData()
+    var imagePickerView: ImagePickerView = ImagePickerView()
+    var imageUploadAPIData: ImageUploadAPIData = ImageUploadAPIData()
+    var imageAPIModel: ImageAPIModel = ImageAPIModel()
     // デリゲートのインスタンス
     var deleteType: DeleteType?
-    var logInDelegate: LogInDelegate?
     var getAllType: GetAllType?
     var createType: CreateType?
     var newMessageDelegate: NewMessageDelegate?
-   
+    var uploadImageType: UploadImageType?
+    var toTweetViewImage: ToTweetViewImage?
+    var imageWithMessageIdType: ImageWithMessageIdType?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +67,17 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         configureTableView()
         configureUI()
         setDelegate()
+        tweetButtonOutllet.isUserInteractionEnabled = false
+        tweetButtonOutllet.alpha = 0.1
+        tableView.isUserInteractionEnabled = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.indexPathsForSelectedRows?.forEach {
+            tableView.deselectRow(at: $0, animated: true)
+        }
     }
     
     private func configureTextView() {
@@ -78,24 +104,45 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
     // tableView,textView以外のDelegateの設定
     private func setDelegate() {
         tableViewDataSouce.tweetViewController = self
+        tableViewDataSouce.parentViewController = self
+        tableViewDataSouce.tableDelegate = self
+        tableViewDataSouce.tweetVC = self
         readAPIData.setMessageDelegate = self
         createAPIData.newMessageDelegate = self
         getAllType = readAPIData
         createType = createAPIData
         deleteType = deleteAPIData
         getAllType?.getAllMessage()
-        
+        imagePickerView.toTweetViewImage = self
+        uploadImageType = imageUploadAPIData
+        imageWithMessageIdType = imageAPIModel
+        imageAPIModel.imageDelegate = self
     }
     
     // 全取得したContentsをtableViewDataSouceにセットする
     func setMessageData(messageInfo: [ContentsInfoModel]) {
         tableViewDataSouce.contentsInfoModel = []
         tableViewDataSouce.contentsInfoModel = messageInfo
+        // 画像のURLは別のModelで一斉に読み込む
+        imageWithMessageIdType?.setImage(messageInfo: messageInfo)
         tableView.reloadData()
     }
-   
+    
+    // 取得した画像をtextIDとの辞書型で格納
+    func getImage(image: UIImage, messageId: Int) {
+        imageArrayWithMessageId.updateValue(image, forKey: messageId)
+        tableViewDataSouce.imageArrayWithIndexPath = imageArrayWithMessageId
+        tableView.reloadData()
+    }
+    
     // textViewが選択された時の挙動
     func textViewDidBeginEditing(_ textView: UITextView) {
+        
+        UIView.animate(withDuration: 0.2) {
+            self.takeImageOutlet.alpha = 0
+            self.cameraRollOutlet.alpha = 0
+            self.imageView.alpha = 0
+        }
         
         // 初期設定の"入力してください"を削除
         if isFarstTouch == true {
@@ -106,11 +153,20 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         textViewHight.constant = textView.sizeThatFits(textView.frame.size).height
         textViewTrailing.constant = 40
         tweetButtonTrailing.constant = 40
-        // TextViewとButtonwの大きさを変更
-        UITextView.animate(withDuration: 1.0, delay: 0.0, animations: {
-            self.tweetButtonOutllet.transform = CGAffineTransform(scaleX: 2.5, y: 1)
-        }, completion: nil)
         textView.alpha = 1
+        tweetButtonOutllet.titleLabel?.font = UIFont.systemFont(ofSize: 22)
+        
+        // Buttonwの大きさを変更
+        UIButton.animate(withDuration: 0.2, delay: 0.0, animations: {
+            self.view.layoutIfNeeded()
+            self.tweetButtonOutllet.transform = CGAffineTransform(scaleX: 2.5, y: 1)
+            
+        }, completion: nil)
+        
+        // 上記で変更したサイズを１秒かけて再描画する
+        UIView.animate(withDuration: 1, animations: {
+            self.view.layoutIfNeeded()
+        })
     }
     
     // 入力された文字に合わせてtextViewの大きさを調節
@@ -120,6 +176,14 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         
         if textView.frame.size.height.native <= maxHeight {
             textViewHight.constant = textView.sizeThatFits(textView.frame.size).height
+        }
+        // 入力があったら投稿ボタンを使用可能に
+        if textView.text.isEmpty == false && isFarstTouch == false {
+            tweetButtonOutllet.isUserInteractionEnabled = true
+            tweetButtonOutllet.alpha = 1
+        } else {
+            tweetButtonOutllet.isUserInteractionEnabled = false
+            tweetButtonOutllet.alpha = 0.1
         }
     }
     
@@ -133,32 +197,51 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
     @IBAction func tweetButtonAction(_ sender: Any) {
         textView.resignFirstResponder()
         
-        if textView.text.isEmpty == false && isFarstTouch == false {
-            if let contents = textView.text {
-                textView.text = ""
-                createType?.createMessage(tweet: contents)
-            }
-        } else {
-            // アラートを表示
-            let alertController = UIAlertController(title: "Text is empty", message: "文字の入力がありません", preferredStyle: .alert)
-            alertController.addAction(UIAlertAction(title: "戻る", style: .cancel, handler: nil))
-            present(alertController, animated: true, completion: nil)
+        if let contents = textView.text {
+            textView.text = ""
+            createType?.createMessage(tweet: contents)
         }
         defaultTextViewSize()
     }
     
-    // 投稿したContentsのidと内容をtableViewDataSouceの先頭にセットする
+    // 投稿したContentsのIDと内容をtableViewDataSouceの先頭にセットする
     func setNewMessageData(content: ContentsInfoModel) {
         tableViewDataSouce.contentsInfoModel.insert(content, at: 0)
+        if let newImage = tweetImage {
+            if let messageId = content.id {
+                imageArrayWithMessageId.updateValue(newImage, forKey: messageId)
+                tableViewDataSouce.imageArrayWithIndexPath = imageArrayWithMessageId
+                uploadImageType?.setImage(textId: messageId, image: newImage)
+            }
+        }
         tableView.reloadData()
+        tweetImage = nil
+        imageView.image = nil
     }
     
-    // 各Itemのサイズを元に戻す
+    // アニメーションで各Itemのサイズを元に戻す
     private func defaultTextViewSize() {
-        textViewTrailing.constant = 10
-        tweetButtonTrailing.constant = 10
-        textViewHight.constant = 160
-        tweetButtonOutllet.transform = CGAffineTransform(scaleX: 1, y: 1)
+        self.textViewTrailing.constant = 10
+        self.tweetButtonTrailing.constant = 10
+        self.textViewHight.constant = 160
+        self.tweetButtonOutllet.transform = CGAffineTransform(scaleX: 1, y: 1)
+        tweetButtonOutllet.titleLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+        // 上記で変更したサイズを１秒かけて再描画する
+        UIView.animate(withDuration: 0.2) {
+            self.view.layoutIfNeeded()
+            self.takeImageOutlet.alpha = 1
+            self.cameraRollOutlet.alpha = 1
+            self.imageView.alpha = 1
+        }
+    }
+    
+    func showImage(imageView: UIImageView) {
+        let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        if let imageVC = mainStoryboard.instantiateViewController(withIdentifier: "ImageView") as? ImageViewController {
+            imageVC.tapedImageView = imageView
+            present(imageVC, animated: true, completion: nil)
+        }
     }
     
     // 編集画面に遷移し編集するデータを渡す
@@ -166,16 +249,23 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let textEditView = mainStoryboard.instantiateViewController(withIdentifier: "TextView") as? TextEditViewController {
-            textEditView.tableViewDataSouce = tableViewDataSouce
-            textEditView.editMessage = tableViewDataSouce.contentsInfoModel[indexPathRow].contents
-            textEditView.indexPath = indexPathRow
-            textEditView.tableReloadDelegate = self
-            present(textEditView, animated: true, completion: nil)
+            if let textId = tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                textEditView.tableViewDataSouce = tableViewDataSouce
+                textEditView.editMessage = tableViewDataSouce.contentsInfoModel[indexPathRow].contents
+                textEditView.indexPath = indexPathRow
+                textEditView.addImage = imageArrayWithMessageId[textId]
+                textEditView.tableReloadDelegate = self
+                present(textEditView, animated: true, completion: nil)
+            }
         }
     }
     
     // 編集画面の変更を反映
-    func reloadData() {
+    func reloadData(textId: Int, image: UIImage?) {
+        if image != nil {
+            imageArrayWithMessageId[textId] = image
+            tableViewDataSouce.imageArrayWithIndexPath = imageArrayWithMessageId
+        }
         tableView.reloadData()
     }
     
@@ -186,15 +276,48 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         alertController.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         // OKボタン
         alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: { OKAction in
-            if let textid = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
-                self.deleteType?.deleteMessage(textID: textid)
+            if let textId = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                self.deleteType?.deleteMessage(textId: textId)
+                
+                //セクションの種類は一つのためindexPathRowのみでindexPathを取得
+                let indexPath:IndexPath = [0, indexPathRow]
                 self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
                 self.tableView.reloadData()
-                    }
-                }
-            )
-        )
+            }
+        }))
         // アラートを表示
         present(alertController, animated: true, completion: nil)
+    }
+    
+    // シェアボタンが押されたら引数で受け取ったContentの共有モーダルを表示する
+    func showActivity(text: String, image: UIImage) {
+        let activityViewController = shareView.showActivityViewController(willShareText: text, willShareImage: image)
+        present(activityViewController, animated: true)
+    }
+    
+    @IBAction func takeImageButton(_ sender: Any) {
+        
+        if let cameraView = imagePickerView.startUpCamera(isFromTextEditView: false) {
+            self.present(cameraView, animated: true)
+        }
+    }
+    
+    @IBAction func openCameraRoll(_ sender: Any) {
+        
+        if let cameraRoll = imagePickerView.openCameraRoll(isFromTextEditView: false) {
+            self.present(cameraRoll, animated: true)
+        }
+    }
+    
+    func pushViewController(tweetView: UIViewController) {
+         navigationController?.pushViewController(tweetView, animated: true)
+    }
+    
+    
+    func setSelectedImage(image: UIImage) {
+        tweetImage = image
+        imageView.image = tweetImage
+        self.dismiss(animated: true)
     }
 }
