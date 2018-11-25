@@ -8,13 +8,19 @@
 
 import UIKit
 
+protocol TableDelegate {
+    func pushViewController(tweetView: UIViewController)
+}
+
 class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
 
     let sectionTitle = ["ツイート"]
     var contentsInfoModel: [ContentsInfoModel] = []
     var tweetViewController: CellsIdType?
-    var resistedImage: UIImage?
-    var fixNumber: Int?
+    var parentViewController: CellsContentType?
+    var tableDelegate: TableDelegate?
+    var imageArrayWithIndexPath: [Int: UIImage]?
+    var tweetVC: TapedImageType?
     
     // セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -38,27 +44,28 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
             
                 // ContentのIDと一致するロード済みの画像がある場合にCellのthumbnailにセット
                 if let image = imageArrayWithIndexPath?[contentsInfoModel[indexPath.row].id] {
                     cell.thumbnail.image = image
             }
             
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
             cell.cellsIdType = tweetViewController
+            cell.cellsContentType = parentViewController
+            cell.tapedImageType = tweetVC
             cell.setCell(content: contentsInfoModel[indexPath.row], indexPathRow: indexPath.row)
-            
-//            // 画像の追加があった場合はここで追加する
-//            if indexPath.row == fixNumber {
-//                if resistedImage != nil {
-//                    cell.thumbnail.image = resistedImage
-//                }
-//            }
             
             return cell
         }
@@ -68,6 +75,9 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -90,12 +100,15 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
         }
     }
     
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
     // cellの高さを文字量に合わせる
     func tableView(_ table: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

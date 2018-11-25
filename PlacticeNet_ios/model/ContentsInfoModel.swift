@@ -20,6 +20,9 @@ struct ContentsInfoModel: Codable {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
     var contents: String
     var id: Int
     var url: String?
@@ -54,6 +57,7 @@ struct ContentsInfoModel: Codable {
         try container.encode(image!.description, forKey: .image)
         try container.encode(url!.description, forKey: .url)
     }
+<<<<<<< HEAD
 =======
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
@@ -70,4 +74,6 @@ struct ContentsInfoModel: Codable {
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
 }
