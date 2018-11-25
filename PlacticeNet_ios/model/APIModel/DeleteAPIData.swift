@@ -12,17 +12,18 @@ class DeleteAPIData: DeleteType {
     
     var getAllType: GetAllType?
     
-    func deleteMessage(textId: Int) {
+    func deleteMessage(textID: Int) {
         
-        if let req = SingletonURLRequest.deleteMessage(textId: textId) {
+        if let req = SingletonURLRequest.deleteMessage(textID: textID) {
             
-            SingletonURLRequest.dataTask(with: req) {(data, response, error) in
+            URLSession.shared.dataTask(with: req) { (data, responce, error) in
                 
                 if error != nil {
                     print(error!.localizedDescription) // nil無しの条件のため!を許容
                 }
                 self.getAllType?.getAllMessage()
             }
+            .resume()
         }
     }
 }

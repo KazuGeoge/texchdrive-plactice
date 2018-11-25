@@ -25,7 +25,7 @@ class SendAPIData: LoginType {
         
         if let req = SingletonURLRequest.loginView(mailAddress: mailAddress) {
             
-            SingletonURLRequest.dataTask(with: req) {(data, response, error) in
+            URLSession.shared.dataTask(with: req) { (data, responce, error) in
                 
                 if error != nil {
                     print(error!.localizedDescription) // nil無しの条件のため!を許容
@@ -36,7 +36,7 @@ class SendAPIData: LoginType {
                         return
                 }
                 
-                if let responce = response as? HTTPURLResponse {
+                if let responce = responce as? HTTPURLResponse {
                     DispatchQueue.main.sync {
                         
                         // ログインが成功なら全Contentsを取得するデリゲートを委譲する
@@ -50,6 +50,7 @@ class SendAPIData: LoginType {
                     }
                 }
             }
+            .resume()
         }
     }
 }

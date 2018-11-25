@@ -10,46 +10,40 @@ import UIKit
 import AssetsLibrary
 
 protocol UploadType {
-    func putMessage(tweet: String, textId: Int)
+    func putMessage(tweet: String, textid: Int)
 }
 
 protocol TableReloadDelegate {
-    func reloadData(textId: Int, image: UIImage?)
+    func reloadData()
 }
 
 protocol UploadImageType {
-    func setImage(textId: Int, image: UIImage?)
+    func setImage(textid: Int, image: UIImage)
 }
 
-class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, TakingImageType  {
+class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate  {
 
     @IBOutlet weak var textView: UITextView!
-    @IBOutlet weak var imageView: UIImageView!
     var tableViewDataSouce: TableViewDataSouce = TableViewDataSouce()
+    var tweetTableViewCell: TweetTableViewCell = TweetTableViewCell()
     var uploadAPIData: UploadAPIData = UploadAPIData()
-    var imagePickerView: ImagePickerView = ImagePickerView()
+    var readAPIData: ReadAPIData = ReadAPIData()
     var imageUploadAPIData: ImageUploadAPIData = ImageUploadAPIData()
     var tableReloadDelegate: TableReloadDelegate?
     var uploadType: UploadType?
-    var uploadImageType: UploadImageType?
     var editMessage: String?
     var indexPath: Int?
-    var addImage: UIImage?
+    var uploadImageType: UploadImageType?
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         textView.delegate = self
         textView.text = editMessage
         textView.layer.borderWidth = 1
         textView.layer.borderColor = UIColor.lightGray.cgColor
         textView.isEditable = true
         uploadType = uploadAPIData
-        imagePickerView.takingImageType = self
-        
-        if addImage != UIImage(named: "noImage") {
-            imageView.image = addImage
-        }
+        uploadImageType = imageUploadAPIData
     }
     
     // キーボード以外をタッチでキーボードを閉じる
@@ -63,6 +57,7 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
         if let tweetString = textView.text {
             if let idexPathRow = indexPath {
                 tableViewDataSouce.contentsInfoModel[idexPathRow].contents = tweetString
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -96,6 +91,11 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+                if let tweetid = tableViewDataSouce.contentsInfoModel[idexPathRow].id {
+                    uploadType?.putMessage(tweet: tweetString, textid: tweetid)
+                    tableReloadDelegate?.reloadData()
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
                     dismiss(animated: true, completion: nil)
             }
         // TableViewのCellが特定出来ない場合は操作やり直し
@@ -118,24 +118,32 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
     
     // カメラロールから写真を選択
     @IBAction func choosePictureButton(_ sender: Any) {
-        
-        if let cameraRoll = imagePickerView.openCameraRoll(isFromTextEditView: true) {
-            self.present(cameraRoll, animated: true)
+       
+        // カメラロールが利用可能か？
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            let pickerView = UIImagePickerController()
+            pickerView.sourceType = .photoLibrary
+            pickerView.delegate = self
+            self.present(pickerView, animated: true)
         }
     }
     
     // カメラを起動
     @IBAction func startCamera(_ sender: Any) {
-
-        if let cameraView = imagePickerView.startUpCamera(isFromTextEditView: true) {
-            self.present(cameraView, animated: true)
+        
+        // カメラが利用可能か?
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraPicker = UIImagePickerController()
+            cameraPicker.sourceType = .camera
+            cameraPicker.delegate = self
+            self.present(cameraPicker, animated: true)
         }
     }
     
-    func takeImage(image: UIImage) {
-        imageView.image = image
-        uploadImageType? = imageUploadAPIData
+    // 写真を選択した時に呼ばれる
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -143,6 +151,8 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
         if let editsIndexPathRow = indexPath {
                 uploadImageType?.setImage(textId: tableViewDataSouce.contentsInfoModel[editsIndexPathRow].id, image: image)
 =======
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
@@ -159,6 +169,7 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
             self.dismiss(animated: true)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
@@ -168,8 +179,8 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
         if let editsIndexPathRow = indexPath {
                 uploadImageType?.setImage(textId: tableViewDataSouce.contentsInfoModel[editsIndexPathRow].id, image: image)
 >>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
         }
-        
-        self.dismiss(animated: true)
     }
 }

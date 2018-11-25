@@ -8,18 +8,15 @@
 
 import UIKit
 
-protocol ImageDelegate {
-    func getImage(image: UIImage, messageId: Int)
-}
 
-class ImageAPIModel: ImageWithMessageIdType {
-    
-    private var image: UIImage?
-    private var ImagesArray: [UIImage] = []
+
+class ImageAPIModel: ImageType {
+
     var imageDelegate: ImageDelegate?
     
-    func setImage(messageInfo: [ContentsInfoModel]) {
+    func setImage(imageURL: String) {
         
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
@@ -99,10 +96,26 @@ class ImageAPIModel: ImageWithMessageIdType {
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+        if let catPictureURL = URL(string: imageURL) {
+            let req = URLRequest(url: catPictureURL)
+            URLSession.shared.dataTask(with: req) { (data, responce, error) in
+                
+                if error != nil {
+                    print(error!.localizedDescription) // nil無しの条件のため!を許容
+                }
+                
+                if let imageData = data {
+                    if let imageimage = UIImage(data: imageData) {
+                        
+                        DispatchQueue.main.async {
+                            self.imageDelegate?.getImage(image: imageimage)
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
                         }
                     }
                 }
-            }
+                }
+                .resume()
         }
     }
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AF22E19121995A49009E24D3 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF22E19021995A49009E24D3 /* ImagePickerView.swift */; };
 		AF33130F21804C7400E5FBFA /* ReadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33130E21804C7400E5FBFA /* ReadAPIData.swift */; };
 		AF33131221804E0300E5FBFA /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131121804E0300E5FBFA /* TokenModel.swift */; };
 		AF33131421804E1200E5FBFA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131321804E1200E5FBFA /* Const.swift */; };
@@ -16,9 +15,6 @@
 		AF33131A21871D2200E5FBFA /* CreateAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131921871D2200E5FBFA /* CreateAPIData.swift */; };
 		AF33131C21872C4700E5FBFA /* UploadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131B21872C4700E5FBFA /* UploadAPIData.swift */; };
 		AF33131E2187313D00E5FBFA /* DeleteAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */; };
-		AF8AC43421A62012008571C3 /* ShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8AC43321A62012008571C3 /* ShareView.swift */; };
-		AF8AC43621A6423F008571C3 /* TweetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8AC43521A6423F008571C3 /* TweetDetailViewController.swift */; };
-		AF8AC43821A666BE008571C3 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8AC43721A666BE008571C3 /* ImageViewController.swift */; };
 		AFA8AAF22178F12E00D2E80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */; };
 		AFA8AAF42178F12E00D2E80C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AAF32178F12E00D2E80C /* LoginViewController.swift */; };
 		AFA8AAF72178F12E00D2E80C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA8AAF52178F12E00D2E80C /* Main.storyboard */; };
@@ -41,6 +37,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		21DAF870567F5B915C469147 /* Pods_PlacticeNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacticeNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF22E19021995A49009E24D3 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 =======
@@ -53,6 +50,8 @@
 		21DAF870567F5B915C469147 /* Pods_PlacticeNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacticeNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF22E19021995A49009E24D3 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 >>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 		AF33130E21804C7400E5FBFA /* ReadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadAPIData.swift; sourceTree = "<group>"; };
 		AF33131121804E0300E5FBFA /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		AF33131321804E1200E5FBFA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
@@ -61,9 +60,6 @@
 		AF33131921871D2200E5FBFA /* CreateAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAPIData.swift; sourceTree = "<group>"; };
 		AF33131B21872C4700E5FBFA /* UploadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAPIData.swift; sourceTree = "<group>"; };
 		AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAPIData.swift; sourceTree = "<group>"; };
-		AF8AC43321A62012008571C3 /* ShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareView.swift; sourceTree = "<group>"; };
-		AF8AC43521A6423F008571C3 /* TweetDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailViewController.swift; sourceTree = "<group>"; };
-		AF8AC43721A666BE008571C3 /* ImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
 		AFA8AAEE2178F12E00D2E80C /* PlacticeNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacticeNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AFA8AAF32178F12E00D2E80C /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -112,9 +108,7 @@
 			children = (
 				AFA8AAF32178F12E00D2E80C /* LoginViewController.swift */,
 				AFA8AB0621799E9500D2E80C /* TweetViewController.swift */,
-				AF8AC43521A6423F008571C3 /* TweetDetailViewController.swift */,
 				AFBAFD28217DB9E000BA6C6C /* TextEditViewController.swift */,
-				AF8AC43721A666BE008571C3 /* ImageViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -125,8 +119,6 @@
 				AFBAFD212179CBBA00BA6C6C /* TableViewDataSouce.swift */,
 				AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */,
 				AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */,
-				AF22E19021995A49009E24D3 /* ImagePickerView.swift */,
-				AF8AC43321A62012008571C3 /* ShareView.swift */,
 			);
 			name = Views;
 			path = cells;
@@ -311,12 +303,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF8AC43421A62012008571C3 /* ShareView.swift in Sources */,
 				AF33131E2187313D00E5FBFA /* DeleteAPIData.swift in Sources */,
 				AF33131221804E0300E5FBFA /* TokenModel.swift in Sources */,
 				AFA8AB0721799E9500D2E80C /* TweetViewController.swift in Sources */,
 				AFBAFD222179CBBA00BA6C6C /* TableViewDataSouce.swift in Sources */,
-				AF8AC43621A6423F008571C3 /* TweetDetailViewController.swift in Sources */,
 				AF33131C21872C4700E5FBFA /* UploadAPIData.swift in Sources */,
 				AF331318218634CB00E5FBFA /* SingletonURLRequest.swift in Sources */,
 				AFBAFD29217DB9E000BA6C6C /* TextEditViewController.swift in Sources */,
@@ -331,8 +321,6 @@
 				AFD174F1218C2D04009CEAF3 /* ContentsInfoModel.swift in Sources */,
 				AFBAFD262179ECF200BA6C6C /* TweetTableViewCell.swift in Sources */,
 				AF33131421804E1200E5FBFA /* Const.swift in Sources */,
-				AF8AC43821A666BE008571C3 /* ImageViewController.swift in Sources */,
-				AF22E19121995A49009E24D3 /* ImagePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
