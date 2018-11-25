@@ -10,16 +10,17 @@ import UIKit
 
 class UploadAPIData: UploadType{
     
-    func putMessage(tweet: String, textId: Int) {
+    func putMessage(tweet: String, textid: Int) {
         
-        if let req =  SingletonURLRequest.uploadMessage(textId: textId, editedContent: tweet) {
-            
-            SingletonURLRequest.dataTask(with: req) {(data, response, error) in
-                
-                if error != nil {
-                    print(error!.localizedDescription) // nil無しの条件のため!を許容
+        if let req =  SingletonURLRequest.uploadMessage(textID: textid, editedContent: tweet) {
+       
+        URLSession.shared.dataTask(with: req) { (data, responce, error) in
+          
+            if error != nil {
+                print(error!.localizedDescription) // nil無しの条件のため!を許容
                 }
             }
+            .resume()
         }
     }
 }

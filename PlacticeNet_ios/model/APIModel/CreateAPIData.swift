@@ -18,11 +18,12 @@ class CreateAPIData: CreateType {
     
     func createMessage(tweet: String) {
         
+        
         let tweetDic:[String: String] = ["contents": tweet]
         
         if let req = SingletonURLRequest.createMessage(tweetContent: tweetDic) {
             
-            SingletonURLRequest.dataTask(with: req) {(data, response, error) in
+            URLSession.shared.dataTask(with: req) { (data, responce, error) in
                 
                 if error != nil {
                     print(error!.localizedDescription) // nil無しの条件のため!を許容
@@ -38,6 +39,7 @@ class CreateAPIData: CreateType {
                     self.newMessageDelegate?.setNewMessageData(content: jsonContentsInfoModelArray)
                 }
             }
+            .resume()
         }
     }
 }

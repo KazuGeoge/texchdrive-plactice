@@ -8,18 +8,15 @@
 
 import UIKit
 
-protocol ImageDelegate {
-    func getImage(image: UIImage, messageId: Int)
-}
 
-class ImageAPIModel: ImageWithMessageIdType {
-    
-    private var image: UIImage?
-    private var ImagesArray: [UIImage] = []
+
+class ImageAPIModel: ImageType {
+
     var imageDelegate: ImageDelegate?
     
-    func setImage(messageInfo: [ContentsInfoModel]) {
+    func setImage(imageURL: String) {
         
+<<<<<<< HEAD
         for contentInfo in messageInfo {
             // 画像のURLの場合はリクエストを送り、帰ってきたら画像をセット
                 
@@ -45,10 +42,26 @@ class ImageAPIModel: ImageWithMessageIdType {
                             if let noImage = UIImage(named: "noImage") {
                                 self.imageDelegate?.getImage(image: image ?? noImage, messageId: contentInfo.id)
                             }
+=======
+        if let catPictureURL = URL(string: imageURL) {
+            let req = URLRequest(url: catPictureURL)
+            URLSession.shared.dataTask(with: req) { (data, responce, error) in
+                
+                if error != nil {
+                    print(error!.localizedDescription) // nil無しの条件のため!を許容
+                }
+                
+                if let imageData = data {
+                    if let imageimage = UIImage(data: imageData) {
+                        
+                        DispatchQueue.main.async {
+                            self.imageDelegate?.getImage(image: imageimage)
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
                         }
                     }
                 }
-            }
+                }
+                .resume()
         }
     }
 }

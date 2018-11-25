@@ -9,19 +9,18 @@
 import UIKit
 
 class ImageUploadAPIData: UploadImageType {
-    
-    func setImage(textId: Int, image: UIImage?) {
-        
-        if let uploadImage = image {
-            if let req =  SingletonURLRequest.uploadImage(image: uploadImage, textId: textId) {
-                
-                SingletonURLRequest.dataTask(with: req) {(data, response, error) in
-                    
-                    if error != nil {
-                        print(error!.localizedDescription) // nil無しの条件のため!を許容
-                    }
-                }
+
+    func setImage(textid: Int, image: UIImage) {
+        // 通信のリクエスト生成.
+        if let req = SingletonURLRequest.uploadImage(textID: textid,  image: image) {
+        URLSession.shared.dataTask(with: req) { (data, responce, error) in
+            
+            if error != nil {
+                print(error!.localizedDescription) // nil無しの条件のため!を許容
             }
+        }
+            // タスクの実行.
+            .resume()
         }
     }
 }

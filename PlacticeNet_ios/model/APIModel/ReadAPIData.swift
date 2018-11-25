@@ -14,13 +14,15 @@ protocol SetMessageDelegate {
 
 class ReadAPIData: GetAllType {
     
+    var contents:[String] = []
+    var idIndex:[Int] = []
     var setMessageDelegate: SetMessageDelegate?
     
     func getAllMessage() {
         
         if let req = SingletonURLRequest.getAllMessage() {
             
-            SingletonURLRequest.dataTask(with: req) {(data, response, error) in
+            URLSession.shared.dataTask(with: req) { (data, response, error) in
                 
                 if error != nil {
                     print(error!.localizedDescription) // nil無しの条件のため!を許容
@@ -43,6 +45,7 @@ class ReadAPIData: GetAllType {
                     self.setMessageDelegate?.setMessageData(messageInfo: [json!])
                 }
             }
+            .resume()
         }
     }
 }
