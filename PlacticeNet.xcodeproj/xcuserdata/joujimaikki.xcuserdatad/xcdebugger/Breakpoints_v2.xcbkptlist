@@ -745,7 +745,11 @@
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TextEditViewController.swift"
 <<<<<<< HEAD
+<<<<<<< HEAD
             timestampString = "564820308.3663681"
+=======
+            timestampString = "563175000.200973"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             timestampString = "563175000.200973"
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
@@ -765,11 +769,19 @@
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
 <<<<<<< HEAD
+<<<<<<< HEAD
             timestampString = "564820308.366449"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "205"
             endingLineNumber = "205"
+=======
+            timestampString = "563091722.8226399"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             timestampString = "563091722.8226399"
             startingColumnNumber = "9223372036854775807"
@@ -835,12 +847,15 @@
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
 <<<<<<< HEAD
+<<<<<<< HEAD
             timestampString = "564820308.366596"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "222"
             endingLineNumber = "222"
 =======
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
             timestampString = "563091722.8227431"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
@@ -862,6 +877,9 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "156"
             endingLineNumber = "156"
+<<<<<<< HEAD
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
             landmarkName = "TweetViewController"
             landmarkType = "3">
@@ -1431,7 +1449,11 @@
             continueAfterRunningActions = "No"
             filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
 <<<<<<< HEAD
+<<<<<<< HEAD
             timestampString = "564820308.367336"
+=======
+            timestampString = "563175000.202391"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             timestampString = "563175000.202391"
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
@@ -1464,8 +1486,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
             timestampString = "564820308.367463"
+=======
+            filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
+            timestampString = "563091722.823221"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
             timestampString = "563091722.823221"
@@ -1485,8 +1512,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
             timestampString = "564820308.3675261"
+=======
+            filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
+            timestampString = "563091722.823298"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
             timestampString = "563091722.823298"
@@ -1506,8 +1538,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
             timestampString = "564820308.367574"
+=======
+            filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
+            timestampString = "563091722.823343"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
             timestampString = "563091722.823343"
@@ -1527,8 +1564,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
             timestampString = "564820308.3676161"
+=======
+            filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
+            timestampString = "563091722.8233891"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
             timestampString = "563091722.8233891"
@@ -1548,6 +1590,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "PlacticeNet_ios/model/APIModel/ReadAPIData.swift"
             timestampString = "564820308.367659"
             startingColumnNumber = "9223372036854775807"
@@ -1555,6 +1598,15 @@
             startingLineNumber = "32"
             endingLineNumber = "32"
             landmarkName = "getAllMessage()"
+=======
+            filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
+            timestampString = "563175000.2027349"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "tableView(_:cellForRowAt:)"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             filePath = "PlacticeNet_ios/cells/TableViewDataSouce.swift"
             timestampString = "563175000.2027349"
@@ -1574,6 +1626,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "PlacticeNet_ios/model/APIModel/ReadAPIData.swift"
             timestampString = "564820308.36807"
             startingColumnNumber = "9223372036854775807"
@@ -1581,6 +1634,15 @@
             startingLineNumber = "44"
             endingLineNumber = "44"
             landmarkName = "getAllMessage()"
+=======
+            filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
+            timestampString = "563091722.823447"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "setMessageData(messageInfo:)"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
             timestampString = "563091722.823447"
@@ -1600,6 +1662,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "PlacticeNet_ios/model/APIModel/ReadAPIData.swift"
             timestampString = "564820308.3683521"
             startingColumnNumber = "9223372036854775807"
@@ -1613,10 +1676,19 @@
             timestampString = "563091722.823489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
+=======
+            filePath = "PlacticeNet_ios/ViewController/TweetViewController.swift"
+            timestampString = "563091722.823489"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
             startingLineNumber = "96"
             endingLineNumber = "96"
             landmarkName = "TweetViewController"
             landmarkType = "3">
+<<<<<<< HEAD
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
          </BreakpointContent>
       </BreakpointProxy>
@@ -1898,6 +1970,7 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
+<<<<<<< HEAD
 <<<<<<< HEAD
             filePath = "PlacticeNet_ios/ViewController/TextEditViewController.swift"
             timestampString = "564820308.369004"
@@ -2544,6 +2617,15 @@
             startingLineNumber = "252"
             endingLineNumber = "252"
             landmarkName = "pushEditCellView(indexPathRow:)"
+=======
+            filePath = "PlacticeNet_ios/model/APIModel/SingletonURLRequest.swift"
+            timestampString = "563175000.204747"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
+            landmarkName = "uploadImage(textID:image:)"
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
             filePath = "PlacticeNet_ios/model/APIModel/SingletonURLRequest.swift"
             timestampString = "563175000.204747"

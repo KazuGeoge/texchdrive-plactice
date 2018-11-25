@@ -58,6 +58,7 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
             if let idexPathRow = indexPath {
                 tableViewDataSouce.contentsInfoModel[idexPathRow].contents = tweetString
 <<<<<<< HEAD
+<<<<<<< HEAD
                     uploadImageType = imageUploadAPIData
                     
                     uploadType?.putMessage(tweet: tweetString, textId: tableViewDataSouce.contentsInfoModel[idexPathRow].id)
@@ -67,6 +68,11 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
                         uploadImageType?.setImage(textId: tableViewDataSouce.contentsInfoModel[idexPathRow].id, image: imageView.image)
                     }
                     tableReloadDelegate?.reloadData(textId: tableViewDataSouce.contentsInfoModel[idexPathRow].id, image: imageView.image)
+=======
+                if let tweetid = tableViewDataSouce.contentsInfoModel[idexPathRow].id {
+                    uploadType?.putMessage(tweet: tweetString, textid: tweetid)
+                    tableReloadDelegate?.reloadData()
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
                 if let tweetid = tableViewDataSouce.contentsInfoModel[idexPathRow].id {
                     uploadType?.putMessage(tweet: tweetString, textid: tweetid)
@@ -120,9 +126,12 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         
 <<<<<<< HEAD
+<<<<<<< HEAD
         if let editsIndexPathRow = indexPath {
                 uploadImageType?.setImage(textId: tableViewDataSouce.contentsInfoModel[editsIndexPathRow].id, image: image)
 =======
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
         if info[UIImagePickerController.InfoKey.originalImage] != nil {
             // 選択した写真を取得する
             let image = info[UIImagePickerController.InfoKey.originalImage] as! UIImage
@@ -133,6 +142,9 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
             tableReloadDelegate?.reloadData()
             uploadImageType?.setImage(textid: tableViewDataSouce.contentsInfoModel[indexPath!].id!, image: image)
             self.dismiss(animated: true)
+<<<<<<< HEAD
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
         }
     }

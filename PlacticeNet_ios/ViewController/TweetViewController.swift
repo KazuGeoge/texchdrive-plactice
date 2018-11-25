@@ -53,6 +53,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         configureUI()
         setDelegate()
 <<<<<<< HEAD
+<<<<<<< HEAD
         tweetButtonOutllet.isUserInteractionEnabled = false
         tweetButtonOutllet.alpha = 0.1
         tableView.isUserInteractionEnabled = true
@@ -67,6 +68,8 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         tableView.indexPathsForSelectedRows?.forEach {
             tableView.deselectRow(at: $0, animated: true)
         }
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
     }
@@ -168,11 +171,14 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
     func setNewMessageData(content: ContentsInfoModel) {
         tableViewDataSouce.contentsInfoModel.insert(content, at: 0)
 <<<<<<< HEAD
+<<<<<<< HEAD
         if let newImage = tweetImage {
                 imageArrayWithMessageId.updateValue(newImage, forKey: content.id)
                 tableViewDataSouce.imageArrayWithIndexPath = imageArrayWithMessageId
                 uploadImageType?.setImage(textId: content.id, image: newImage)
         }
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
         tableView.reloadData()
@@ -195,7 +201,10 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
             textEditView.editMessage = tableViewDataSouce.contentsInfoModel[indexPathRow].contents
             textEditView.indexPath = indexPathRow
 <<<<<<< HEAD
+<<<<<<< HEAD
             textEditView.addImage = imageArrayWithMessageId[tableViewDataSouce.contentsInfoModel[indexPathRow].id]
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
             textEditView.tableReloadDelegate = self
@@ -216,6 +225,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         // OKボタン
         alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: { OKAction in
 <<<<<<< HEAD
+<<<<<<< HEAD
                 self.deleteType?.deleteMessage(textId: self.tableViewDataSouce.contentsInfoModel[indexPathRow].id)
                 
                 //セクションの種類は一つのためindexPathRowのみでindexPathを取得
@@ -230,10 +240,19 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
             }
         ))
 =======
+=======
+            if let textid = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                self.deleteType?.deleteMessage(textID: textid)
+                self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
+                self.tableView.reloadData()
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
                     }
                 }
             )
         )
+<<<<<<< HEAD
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
         // アラートを表示
         present(alertController, animated: true, completion: nil)

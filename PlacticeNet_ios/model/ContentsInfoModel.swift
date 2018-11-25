@@ -18,6 +18,7 @@ import Kingfisher
 
 struct ContentsInfoModel: Codable {
 <<<<<<< HEAD
+<<<<<<< HEAD
     var contents: String
     var id: Int
     var url: String?
@@ -53,9 +54,14 @@ struct ContentsInfoModel: Codable {
         try container.encode(url!.description, forKey: .url)
     }
 =======
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 
     var contents: String?
     var id: Int?
     var url: String?
+<<<<<<< HEAD
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 }
