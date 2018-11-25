@@ -22,31 +22,28 @@ class ImageAPIModel: ImageWithMessageIdType {
         
         for contentInfo in messageInfo {
             // 画像のURLの場合はリクエストを送り、帰ってきたら画像をセット
-            if let imageString = contentInfo.url {
                 
-                if let catPictureURL = URL(string: imageString) {
+            if let catPictureURL = URL(string: "") {
                     
-                    let req = URLRequest(url: catPictureURL)
-                    SingletonURLRequest.dataTask(with: req) {(data, response, error) in
+                let req = URLRequest(url: catPictureURL)
+                SingletonURLRequest.dataTask(with: req) {(data, response, error) in
                         
-                        if error != nil {
-                            print(error!.localizedDescription) // nil無しの条件のため!を許容
+                    if error != nil {
+                        print(error!.localizedDescription) // nil無しの条件のため!を許容
+                    }
+                        
+                    // サブスレッドで非同期で通信をする
+                    DispatchQueue.global().async {
+                        var image = UIImage(named: "")
+                        if let imageData = data {
+                            image = UIImage(data: imageData)
                         }
-                        
-                        // サブスレッドで非同期で通信をする
-                        DispatchQueue.global().async {
-                            if let imageData = data {
-                                self.image = UIImage(data: imageData)
-                            }
                             
-                            // データが帰ってきたらメインスレッドで描画をする
-                            DispatchQueue.main.sync {
-                                if let messageId = contentInfo.id {
-                                    // 画像ではないURLだったらでか画像がない事を示す画像をセットする
-                                    if let noImage = UIImage(named: "noImage") {
-                                        self.imageDelegate?.getImage(image: self.image ?? noImage, messageId: messageId)
-                                    }
-                                }
+                        // データが帰ってきたらメインスレッドで描画をする
+                        DispatchQueue.main.sync {
+                            // 画像ではないURLだったらでか画像がない事を示す画像をセットする
+                            if let noImage = UIImage(named: "noImage") {
+                                self.imageDelegate?.getImage(image: image ?? noImage, messageId: contentInfo.id)
                             }
                         }
                     }

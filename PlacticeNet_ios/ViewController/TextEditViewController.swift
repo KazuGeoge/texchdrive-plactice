@@ -63,18 +63,16 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
         if let tweetString = textView.text {
             if let idexPathRow = indexPath {
                 tableViewDataSouce.contentsInfoModel[idexPathRow].contents = tweetString
-                if let tweetId = tableViewDataSouce.contentsInfoModel[idexPathRow].id {
                     uploadImageType = imageUploadAPIData
                     
-                    uploadType?.putMessage(tweet: tweetString, textId: tweetId)
+                    uploadType?.putMessage(tweet: tweetString, textId: tableViewDataSouce.contentsInfoModel[idexPathRow].id)
                     tableViewDataSouce.contentsInfoModel[idexPathRow].contents = tweetString
                     
                     if imageView.image != nil {
-                        uploadImageType?.setImage(textId: tweetId, image: imageView.image)
+                        uploadImageType?.setImage(textId: tableViewDataSouce.contentsInfoModel[idexPathRow].id, image: imageView.image)
                     }
-                    tableReloadDelegate?.reloadData(textId: tweetId, image: imageView.image)
+                    tableReloadDelegate?.reloadData(textId: tableViewDataSouce.contentsInfoModel[idexPathRow].id, image: imageView.image)
                     dismiss(animated: true, completion: nil)
-                }
             }
         // TableViewのCellが特定出来ない場合は操作やり直し
         } else {
@@ -115,9 +113,7 @@ class TextEditViewController: UIViewController, UITextViewDelegate, UIImagePicke
         uploadImageType? = imageUploadAPIData
         
         if let editsIndexPathRow = indexPath {
-            if let textId = tableViewDataSouce.contentsInfoModel[editsIndexPathRow].id {
-                uploadImageType?.setImage(textId: textId, image: image)
-            }
+                uploadImageType?.setImage(textId: tableViewDataSouce.contentsInfoModel[editsIndexPathRow].id, image: image)
         }
         
         self.dismiss(animated: true)
