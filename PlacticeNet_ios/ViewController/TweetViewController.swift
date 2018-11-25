@@ -54,6 +54,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         setDelegate()
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         tweetButtonOutllet.isUserInteractionEnabled = false
         tweetButtonOutllet.alpha = 0.1
         tableView.isUserInteractionEnabled = true
@@ -68,6 +69,8 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         tableView.indexPathsForSelectedRows?.forEach {
             tableView.deselectRow(at: $0, animated: true)
         }
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
@@ -172,11 +175,14 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         tableViewDataSouce.contentsInfoModel.insert(content, at: 0)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if let newImage = tweetImage {
                 imageArrayWithMessageId.updateValue(newImage, forKey: content.id)
                 tableViewDataSouce.imageArrayWithIndexPath = imageArrayWithMessageId
                 uploadImageType?.setImage(textId: content.id, image: newImage)
         }
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
@@ -202,7 +208,10 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
             textEditView.indexPath = indexPathRow
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             textEditView.addImage = imageArrayWithMessageId[tableViewDataSouce.contentsInfoModel[indexPathRow].id]
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
@@ -226,6 +235,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: { OKAction in
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 self.deleteType?.deleteMessage(textId: self.tableViewDataSouce.contentsInfoModel[indexPathRow].id)
                 
                 //セクションの種類は一つのためindexPathRowのみでindexPathを取得
@@ -246,11 +256,20 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
                 self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
                 self.tableView.reloadData()
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+            if let textid = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                self.deleteType?.deleteMessage(textID: textid)
+                self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
+                self.tableView.reloadData()
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
                     }
                 }
             )
         )
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加

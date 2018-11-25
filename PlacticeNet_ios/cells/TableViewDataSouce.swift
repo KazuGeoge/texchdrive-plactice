@@ -37,12 +37,15 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
             
                 // ContentのIDと一致するロード済みの画像がある場合にCellのthumbnailにセット
                 if let image = imageArrayWithIndexPath?[contentsInfoModel[indexPath.row].id] {
                     cell.thumbnail.image = image
             }
             
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
@@ -62,6 +65,7 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
         return UITableViewCell()
     }
     
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
      func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -86,6 +90,8 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
         }
     }
     
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======

@@ -35,8 +35,11 @@
 /* Begin PBXFileReference section */
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		21DAF870567F5B915C469147 /* Pods_PlacticeNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacticeNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF22E19021995A49009E24D3 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
 >>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======

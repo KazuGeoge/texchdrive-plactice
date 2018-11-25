@@ -18,6 +18,7 @@ class ImageAPIModel: ImageType {
         
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         for contentInfo in messageInfo {
             // 画像のURLの場合はリクエストを送り、帰ってきたら画像をセット
                 
@@ -43,6 +44,21 @@ class ImageAPIModel: ImageType {
                             if let noImage = UIImage(named: "noImage") {
                                 self.imageDelegate?.getImage(image: image ?? noImage, messageId: contentInfo.id)
                             }
+=======
+        if let catPictureURL = URL(string: imageURL) {
+            let req = URLRequest(url: catPictureURL)
+            URLSession.shared.dataTask(with: req) { (data, responce, error) in
+                
+                if error != nil {
+                    print(error!.localizedDescription) // nil無しの条件のため!を許容
+                }
+                
+                if let imageData = data {
+                    if let imageimage = UIImage(data: imageData) {
+                        
+                        DispatchQueue.main.async {
+                            self.imageDelegate?.getImage(image: imageimage)
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 =======
         if let catPictureURL = URL(string: imageURL) {
             let req = URLRequest(url: catPictureURL)
