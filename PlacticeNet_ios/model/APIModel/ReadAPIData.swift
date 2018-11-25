@@ -25,14 +25,22 @@ class ReadAPIData: GetAllType {
                 if error != nil {
                     print(error!.localizedDescription) // nil無しの条件のため!を許容
                 }
-                
-                guard let data = data,
-                    let json = try? JSONDecoder().decode([ContentsInfoModel].self, from: data) else {
-                        return
+                if let response = response as? HTTPURLResponse {
+                    print("response.statusCode = \(response.statusCode)")
                 }
                 
+                 let data = data
+                let json = try? JSONDecoder().decode(ContentsInfoModel.self, from: data!)
+                        let encoder = JSONEncoder()
+                        encoder.outputFormatting = .prettyPrinted
+                        let encoded = try? encoder.encode(json)
+                        print(String(data: encoded!, encoding: .utf8)!)
+                
+                
+               print("json:\(json)")
+                
                 DispatchQueue.main.async {
-                    self.setMessageDelegate?.setMessageData(messageInfo: json)
+                    self.setMessageDelegate?.setMessageData(messageInfo: [json!])
                 }
             }
         }

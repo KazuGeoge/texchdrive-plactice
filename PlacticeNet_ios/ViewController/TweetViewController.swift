@@ -70,6 +70,9 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         tweetButtonOutllet.isUserInteractionEnabled = false
         tweetButtonOutllet.alpha = 0.1
         tableView.isUserInteractionEnabled = true
+        
+        
+        dump(ContentsInfoModel.self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -208,11 +211,9 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
     func setNewMessageData(content: ContentsInfoModel) {
         tableViewDataSouce.contentsInfoModel.insert(content, at: 0)
         if let newImage = tweetImage {
-            if let messageId = content.id {
-                imageArrayWithMessageId.updateValue(newImage, forKey: messageId)
+                imageArrayWithMessageId.updateValue(newImage, forKey: content.id)
                 tableViewDataSouce.imageArrayWithIndexPath = imageArrayWithMessageId
-                uploadImageType?.setImage(textId: messageId, image: newImage)
-            }
+                uploadImageType?.setImage(textId: content.id, image: newImage)
         }
         tableView.reloadData()
         tweetImage = nil
@@ -249,14 +250,12 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
         
         if let textEditView = mainStoryboard.instantiateViewController(withIdentifier: "TextView") as? TextEditViewController {
-            if let textId = tableViewDataSouce.contentsInfoModel[indexPathRow].id {
-                textEditView.tableViewDataSouce = tableViewDataSouce
-                textEditView.editMessage = tableViewDataSouce.contentsInfoModel[indexPathRow].contents
-                textEditView.indexPath = indexPathRow
-                textEditView.addImage = imageArrayWithMessageId[textId]
-                textEditView.tableReloadDelegate = self
-                present(textEditView, animated: true, completion: nil)
-            }
+            textEditView.tableViewDataSouce = tableViewDataSouce
+            textEditView.editMessage = tableViewDataSouce.contentsInfoModel[indexPathRow].contents
+            textEditView.indexPath = indexPathRow
+            textEditView.addImage = imageArrayWithMessageId[tableViewDataSouce.contentsInfoModel[indexPathRow].id]
+            textEditView.tableReloadDelegate = self
+            present(textEditView, animated: true, completion: nil)
         }
     }
     
@@ -276,8 +275,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
         alertController.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         // OKボタン
         alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: { OKAction in
-            if let textId = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
-                self.deleteType?.deleteMessage(textId: textId)
+                self.deleteType?.deleteMessage(textId: self.tableViewDataSouce.contentsInfoModel[indexPathRow].id)
                 
                 //セクションの種類は一つのためindexPathRowのみでindexPathを取得
                 let indexPath:IndexPath = [0, indexPathRow]
@@ -285,7 +283,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, Ta
                 self.tableView.deleteRows(at: [indexPath], with: .fade)
                 self.tableView.reloadData()
             }
-        }))
+        ))
         // アラートを表示
         present(alertController, animated: true, completion: nil)
     }

@@ -42,13 +42,9 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
             
-            //  対象のContentのID
-            if let messageId = contentsInfoModel[indexPath.row].id {
-                
                 // ContentのIDと一致するロード済みの画像がある場合にCellのthumbnailにセット
-                if let image = imageArrayWithIndexPath?[messageId] {
+                if let image = imageArrayWithIndexPath?[contentsInfoModel[indexPath.row].id] {
                     cell.thumbnail.image = image
-                }
             }
             
             cell.cellsIdType = tweetViewController
@@ -75,11 +71,9 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
             tweetDetailVC.tapedImageType = tweetVC
             tweetDetailVC.isFromTweetView = true
             //  対象のContentのID
-            if let messageId = contentsInfoModel[indexPath.row].id {
                 // ContentのIDと一致するロード済みの画像がある場合にCellのthumbnailをセット
-                if let image = imageArrayWithIndexPath?[messageId] {
+                if let image = imageArrayWithIndexPath?[contentsInfoModel[indexPath.row].id] {
                    tweetDetailVC.image  = image
-                }
             }
             tableDelegate?.pushViewController(tweetView: tweetDetailVC)
         }
