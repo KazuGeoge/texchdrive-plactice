@@ -11,11 +11,10 @@ import UIKit
 class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
 
     let sectionTitle = ["ツイート"]
-    var messageContents: [String] = []
-    var textIDArray: [Int] = []
-    var contentsList: [BaseContents] = []
-    // TODO: TweetVCを入れる方法が他にないか
-    var editCell: EditCell?
+    var contentsInfoModel: [ContentsInfoModel] = []
+    var tweetViewController: CellsIdType?
+    var resistedImage: UIImage?
+    var fixNumber: Int?
     
     // セクションの数
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -29,28 +28,33 @@ class TableViewDataSouce: NSObject, UITableViewDataSource, UITableViewDelegate{
     
     // cellの数
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return messageContents.count
+        return contentsInfoModel.count
     }
     
     //cellの内容
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as? TweetTableViewCell {
-            let contentString = messageContents[indexPath.row]
-            let contentID = textIDArray[indexPath.row] 
-            cell.textLabel?.text = contentString
-            cell.textLabel?.font = UIFont.systemFont(ofSize: 12)
-            cell.textLabel?.numberOfLines = 10
-            cell.editCellDelegate = editCell
-            cell.textID = contentID
-            // 行数把握のため各ボタンのtagにindex番号を渡す
-            cell.deleteItem.tag = indexPath.row
-            cell.editItem.tag = indexPath.row
+                // ContentのIDと一致するロード済みの画像がある場合にCellのthumbnailにセット
+                if let image = imageArrayWithIndexPath?[contentsInfoModel[indexPath.row].id] {
+                    cell.thumbnail.image = image
+            }
+   
+            cell.cellsIdType = tweetViewController
+            cell.setCell(content: contentsInfoModel[indexPath.row], indexPathRow: indexPath.row)
+            
+//            // 画像の追加があった場合はここで追加する
+//            if indexPath.row == fixNumber {
+//                if resistedImage != nil {
+//                    cell.thumbnail.image = resistedImage
+//                }
+//            }
+            
             return cell
         }
         return UITableViewCell()
     }
-    
+
     // cellの高さを文字量に合わせる
     func tableView(_ table: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		AF33130F21804C7400E5FBFA /* ReadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33130E21804C7400E5FBFA /* ReadAPIData.swift */; };
-		AF33131221804E0300E5FBFA /* BaseContents.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131121804E0300E5FBFA /* BaseContents.swift */; };
+		AF33131221804E0300E5FBFA /* TokenModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131121804E0300E5FBFA /* TokenModel.swift */; };
 		AF33131421804E1200E5FBFA /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131321804E1200E5FBFA /* Const.swift */; };
 		AF3313162181BCF800E5FBFA /* SendAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF3313152181BCF800E5FBFA /* SendAPIData.swift */; };
 		AF331318218634CB00E5FBFA /* SingletonURLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */; };
 		AF33131A21871D2200E5FBFA /* CreateAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131921871D2200E5FBFA /* CreateAPIData.swift */; };
-		AF33131C21872C4700E5FBFA /* UPLoadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */; };
+		AF33131C21872C4700E5FBFA /* UploadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131B21872C4700E5FBFA /* UploadAPIData.swift */; };
 		AF33131E2187313D00E5FBFA /* DeleteAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */; };
 		AFA8AAF22178F12E00D2E80C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */; };
 		AFA8AAF42178F12E00D2E80C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AAF32178F12E00D2E80C /* LoginViewController.swift */; };
@@ -22,20 +22,43 @@
 		AFA8AAFC2178F13000D2E80C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AFA8AAFB2178F13000D2E80C /* Assets.xcassets */; };
 		AFA8AAFF2178F13000D2E80C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFA8AAFD2178F13000D2E80C /* LaunchScreen.storyboard */; };
 		AFA8AB0721799E9500D2E80C /* TweetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFA8AB0621799E9500D2E80C /* TweetViewController.swift */; };
+		AFB47697218EC6C200187474 /* ImageAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB47696218EC6C200187474 /* ImageAPIModel.swift */; };
 		AFBAFD222179CBBA00BA6C6C /* TableViewDataSouce.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAFD212179CBBA00BA6C6C /* TableViewDataSouce.swift */; };
 		AFBAFD262179ECF200BA6C6C /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */; };
 		AFBAFD272179ECF200BA6C6C /* TweetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */; };
 		AFBAFD29217DB9E000BA6C6C /* TextEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFBAFD28217DB9E000BA6C6C /* TextEditViewController.swift */; };
+		AFD174F1218C2D04009CEAF3 /* ContentsInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFD174F0218C2D04009CEAF3 /* ContentsInfoModel.swift */; };
+		AFFFFAB221902E1000EEA67B /* ImageUploadAPIData.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFFFFAB121902E1000EEA67B /* ImageUploadAPIData.swift */; };
+		F3F9F06D9F105F9BE7449956 /* Pods_PlacticeNet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21DAF870567F5B915C469147 /* Pods_PlacticeNet.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+		21DAF870567F5B915C469147 /* Pods_PlacticeNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacticeNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF22E19021995A49009E24D3 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+		21DAF870567F5B915C469147 /* Pods_PlacticeNet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlacticeNet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF22E19021995A49009E24D3 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
 		AF33130E21804C7400E5FBFA /* ReadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadAPIData.swift; sourceTree = "<group>"; };
-		AF33131121804E0300E5FBFA /* BaseContents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseContents.swift; sourceTree = "<group>"; };
+		AF33131121804E0300E5FBFA /* TokenModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenModel.swift; sourceTree = "<group>"; };
 		AF33131321804E1200E5FBFA /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
 		AF3313152181BCF800E5FBFA /* SendAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendAPIData.swift; sourceTree = "<group>"; };
 		AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingletonURLRequest.swift; sourceTree = "<group>"; };
 		AF33131921871D2200E5FBFA /* CreateAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAPIData.swift; sourceTree = "<group>"; };
-		AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UPLoadAPIData.swift; sourceTree = "<group>"; };
+		AF33131B21872C4700E5FBFA /* UploadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadAPIData.swift; sourceTree = "<group>"; };
 		AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAPIData.swift; sourceTree = "<group>"; };
 		AFA8AAEE2178F12E00D2E80C /* PlacticeNet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlacticeNet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,10 +69,15 @@
 		AFA8AAFE2178F13000D2E80C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AFA8AB002178F13000D2E80C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AFA8AB0621799E9500D2E80C /* TweetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetViewController.swift; sourceTree = "<group>"; };
+		AFB47696218EC6C200187474 /* ImageAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAPIModel.swift; sourceTree = "<group>"; };
 		AFBAFD212179CBBA00BA6C6C /* TableViewDataSouce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSouce.swift; sourceTree = "<group>"; };
 		AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
 		AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TweetTableViewCell.xib; sourceTree = "<group>"; };
 		AFBAFD28217DB9E000BA6C6C /* TextEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditViewController.swift; sourceTree = "<group>"; };
+		AFD174F0218C2D04009CEAF3 /* ContentsInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentsInfoModel.swift; sourceTree = "<group>"; };
+		AFFFFAB121902E1000EEA67B /* ImageUploadAPIData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUploadAPIData.swift; sourceTree = "<group>"; };
+		CC6B5450D05509E8569039FF /* Pods-PlacticeNet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacticeNet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlacticeNet/Pods-PlacticeNet.debug.xcconfig"; sourceTree = "<group>"; };
+		CDA498EE7D0C76D755FFC838 /* Pods-PlacticeNet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlacticeNet.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlacticeNet/Pods-PlacticeNet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F3F9F06D9F105F9BE7449956 /* Pods_PlacticeNet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,8 +95,10 @@
 		AF33131021804DA500E5FBFA /* model */ = {
 			isa = PBXGroup;
 			children = (
-				AF33131121804E0300E5FBFA /* BaseContents.swift */,
+				AF33131121804E0300E5FBFA /* TokenModel.swift */,
+				AFD174F0218C2D04009CEAF3 /* ContentsInfoModel.swift */,
 				AF33131321804E1200E5FBFA /* Const.swift */,
+				AFD174F2218C49BE009CEAF3 /* APIModel */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -86,12 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				AFBAFD212179CBBA00BA6C6C /* TableViewDataSouce.swift */,
-				AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */,
-				AF3313152181BCF800E5FBFA /* SendAPIData.swift */,
-				AF33130E21804C7400E5FBFA /* ReadAPIData.swift */,
-				AF33131921871D2200E5FBFA /* CreateAPIData.swift */,
-				AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */,
-				AF33131B21872C4700E5FBFA /* UPLoadAPIData.swift */,
+				AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */,
+				AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */,
 			);
 			name = Views;
 			path = cells;
@@ -102,6 +129,8 @@
 			children = (
 				AFA8AAF02178F12E00D2E80C /* PlacticeNet_ios */,
 				AFA8AAEF2178F12E00D2E80C /* Products */,
+				BE940858281CB9CDB2A2F4E7 /* Pods */,
+				E54A8536CBDDEDD2F1BBC8D5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,7 +147,6 @@
 			children = (
 				AFA58288217F2BD400C67CB1 /* ViewController */,
 				AFA5828B217F2C4100C67CB1 /* Views */,
-				AFBAFD202179CB8100BA6C6C /* cells */,
 				AF33131021804DA500E5FBFA /* model */,
 				AFA8AAF12178F12E00D2E80C /* AppDelegate.swift */,
 				AFA8AAF52178F12E00D2E80C /* Main.storyboard */,
@@ -130,14 +158,36 @@
 			path = PlacticeNet_ios;
 			sourceTree = "<group>";
 		};
-		AFBAFD202179CB8100BA6C6C /* cells */ = {
+		AFD174F2218C49BE009CEAF3 /* APIModel */ = {
 			isa = PBXGroup;
 			children = (
-				AFBAFD242179ECF200BA6C6C /* TweetTableViewCell.swift */,
-				AFBAFD252179ECF200BA6C6C /* TweetTableViewCell.xib */,
+				AF331317218634CB00E5FBFA /* SingletonURLRequest.swift */,
+				AF3313152181BCF800E5FBFA /* SendAPIData.swift */,
+				AF33130E21804C7400E5FBFA /* ReadAPIData.swift */,
+				AF33131921871D2200E5FBFA /* CreateAPIData.swift */,
+				AF33131D2187313D00E5FBFA /* DeleteAPIData.swift */,
+				AF33131B21872C4700E5FBFA /* UploadAPIData.swift */,
+				AFB47696218EC6C200187474 /* ImageAPIModel.swift */,
+				AFFFFAB121902E1000EEA67B /* ImageUploadAPIData.swift */,
 			);
-			name = cells;
-			path = Views;
+			path = APIModel;
+			sourceTree = "<group>";
+		};
+		BE940858281CB9CDB2A2F4E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC6B5450D05509E8569039FF /* Pods-PlacticeNet.debug.xcconfig */,
+				CDA498EE7D0C76D755FFC838 /* Pods-PlacticeNet.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E54A8536CBDDEDD2F1BBC8D5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				21DAF870567F5B915C469147 /* Pods_PlacticeNet.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,9 +197,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = AFA8AB032178F13000D2E80C /* Build configuration list for PBXNativeTarget "PlacticeNet" */;
 			buildPhases = (
+				5789995C7674520A6023B392 /* [CP] Check Pods Manifest.lock */,
 				AFA8AAEA2178F12E00D2E80C /* Sources */,
 				AFA8AAEB2178F12E00D2E80C /* Frameworks */,
 				AFA8AAEC2178F12E00D2E80C /* Resources */,
+				A9E77D4B3AA0539C68AD8B39 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -207,16 +259,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5789995C7674520A6023B392 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlacticeNet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9E77D4B3AA0539C68AD8B39 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PlacticeNet/Pods-PlacticeNet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlacticeNet/Pods-PlacticeNet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		AFA8AAEA2178F12E00D2E80C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				AF33131E2187313D00E5FBFA /* DeleteAPIData.swift in Sources */,
-				AF33131221804E0300E5FBFA /* BaseContents.swift in Sources */,
+				AF33131221804E0300E5FBFA /* TokenModel.swift in Sources */,
 				AFA8AB0721799E9500D2E80C /* TweetViewController.swift in Sources */,
 				AFBAFD222179CBBA00BA6C6C /* TableViewDataSouce.swift in Sources */,
-				AF33131C21872C4700E5FBFA /* UPLoadAPIData.swift in Sources */,
+				AF33131C21872C4700E5FBFA /* UploadAPIData.swift in Sources */,
 				AF331318218634CB00E5FBFA /* SingletonURLRequest.swift in Sources */,
 				AFBAFD29217DB9E000BA6C6C /* TextEditViewController.swift in Sources */,
 				AFA8AAF42178F12E00D2E80C /* LoginViewController.swift in Sources */,
@@ -225,6 +316,9 @@
 				AF33130F21804C7400E5FBFA /* ReadAPIData.swift in Sources */,
 				AFA8AAFA2178F12E00D2E80C /* PlacticeNet.xcdatamodeld in Sources */,
 				AFA8AAF22178F12E00D2E80C /* AppDelegate.swift in Sources */,
+				AFFFFAB221902E1000EEA67B /* ImageUploadAPIData.swift in Sources */,
+				AFB47697218EC6C200187474 /* ImageAPIModel.swift in Sources */,
+				AFD174F1218C2D04009CEAF3 /* ContentsInfoModel.swift in Sources */,
 				AFBAFD262179ECF200BA6C6C /* TweetTableViewCell.swift in Sources */,
 				AF33131421804E1200E5FBFA /* Const.swift in Sources */,
 			);
@@ -370,6 +464,7 @@
 		};
 		AFA8AB042178F13000D2E80C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC6B5450D05509E8569039FF /* Pods-PlacticeNet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -389,6 +484,7 @@
 		};
 		AFA8AB052178F13000D2E80C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CDA498EE7D0C76D755FFC838 /* Pods-PlacticeNet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -416,7 +512,7 @@
 				AFA8AB022178F13000D2E80C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		AFA8AB032178F13000D2E80C /* Build configuration list for PBXNativeTarget "PlacticeNet" */ = {
 			isa = XCConfigurationList;
@@ -425,7 +521,7 @@
 				AFA8AB052178F13000D2E80C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

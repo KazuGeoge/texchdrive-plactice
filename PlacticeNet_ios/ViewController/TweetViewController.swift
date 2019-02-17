@@ -20,7 +20,7 @@ protocol DeleteType {
     func deleteMessage(textID: Int)
 }
 
-class TweetViewController: UIViewController, UITextViewDelegate, EditCell, TableReloadDelegate, SetMessageDelegate, NewMessageDelegate {
+class TweetViewController: UIViewController, UITextViewDelegate, CellsIdType, TableReloadDelegate, SetMessageDelegate, NewMessageDelegate {
  
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var tableView: UITableView!
@@ -44,7 +44,7 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
     var getAllType: GetAllType?
     var createType: CreateType?
     var newMessageDelegate: NewMessageDelegate?
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,6 +52,38 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         configureTableView()
         configureUI()
         setDelegate()
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+        tweetButtonOutllet.isUserInteractionEnabled = false
+        tweetButtonOutllet.alpha = 0.1
+        tableView.isUserInteractionEnabled = true
+        
+        
+        dump(ContentsInfoModel.self)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        tableView.indexPathsForSelectedRows?.forEach {
+            tableView.deselectRow(at: $0, animated: true)
+        }
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
     }
     
     private func configureTextView() {
@@ -77,21 +109,20 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
     
     // tableView,textView以外のDelegateの設定
     private func setDelegate() {
-        tableViewDataSouce.editCell = self
+        tableViewDataSouce.tweetViewController = self
         readAPIData.setMessageDelegate = self
         createAPIData.newMessageDelegate = self
         getAllType = readAPIData
         createType = createAPIData
         deleteType = deleteAPIData
         getAllType?.getAllMessage()
+        
     }
     
     // 全取得したContentsをtableViewDataSouceにセットする
-    func setMessageData(content: [String], id: [Int]) {
-        tableViewDataSouce.messageContents = []
-        tableViewDataSouce.textIDArray = []
-        tableViewDataSouce.messageContents = content
-        tableViewDataSouce.textIDArray = id
+    func setMessageData(messageInfo: [ContentsInfoModel]) {
+        tableViewDataSouce.contentsInfoModel = []
+        tableViewDataSouce.contentsInfoModel = messageInfo
         tableView.reloadData()
     }
    
@@ -149,9 +180,31 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
     }
     
     // 投稿したContentsのidと内容をtableViewDataSouceの先頭にセットする
-    func setNewMessageData(content: String, textID: Int) {
-        tableViewDataSouce.messageContents.insert(content, at: 0)
-        tableViewDataSouce.textIDArray.insert(textID, at: 0)
+    func setNewMessageData(content: ContentsInfoModel) {
+        tableViewDataSouce.contentsInfoModel.insert(content, at: 0)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+        if let newImage = tweetImage {
+                imageArrayWithMessageId.updateValue(newImage, forKey: content.id)
+                tableViewDataSouce.imageArrayWithIndexPath = imageArrayWithMessageId
+                uploadImageType?.setImage(textId: content.id, image: newImage)
+        }
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
         tableView.reloadData()
     }
     
@@ -169,8 +222,25 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         
         if let textEditView = mainStoryboard.instantiateViewController(withIdentifier: "TextView") as? TextEditViewController {
             textEditView.tableViewDataSouce = tableViewDataSouce
-            textEditView.editMessage = tableViewDataSouce.messageContents[indexPathRow]
+            textEditView.editMessage = tableViewDataSouce.contentsInfoModel[indexPathRow].contents
             textEditView.indexPath = indexPathRow
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+            textEditView.addImage = imageArrayWithMessageId[tableViewDataSouce.contentsInfoModel[indexPathRow].id]
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+            textEditView.addImage = imageArrayWithMessageId[tableViewDataSouce.contentsInfoModel[indexPathRow].id]
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
             textEditView.tableReloadDelegate = self
             present(textEditView, animated: true, completion: nil)
         }
@@ -188,14 +258,58 @@ class TweetViewController: UIViewController, UITextViewDelegate, EditCell, Table
         alertController.addAction(UIAlertAction(title: "キャンセル", style: .cancel, handler: nil))
         // OKボタン
         alertController.addAction(UIAlertAction(title: "OK!", style: .default, handler: { OKAction in
-            self.tableViewDataSouce.messageContents.remove(at: indexPathRow)
-            let tweetID = self.tableViewDataSouce.textIDArray[indexPathRow]
-            self.tableViewDataSouce.textIDArray.remove(at: indexPathRow)
-            self.deleteType?.deleteMessage(textID: tweetID)
-            self.tableView.reloadData()
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+                self.deleteType?.deleteMessage(textId: self.tableViewDataSouce.contentsInfoModel[indexPathRow].id)
+                
+                //セクションの種類は一つのためindexPathRowのみでindexPathを取得
+                let indexPath:IndexPath = [0, indexPathRow]
+=======
+            if let textid = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                self.deleteType?.deleteMessage(textID: textid)
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+                self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
+                self.tableView.reloadData()
+<<<<<<< HEAD
+            }
+        ))
+<<<<<<< HEAD
+=======
+=======
+            if let textid = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                self.deleteType?.deleteMessage(textID: textid)
+                self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
+                self.tableView.reloadData()
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+            if let textid = self.tableViewDataSouce.contentsInfoModel[indexPathRow].id {
+                self.deleteType?.deleteMessage(textID: textid)
+                self.tableViewDataSouce.contentsInfoModel.remove(at: indexPathRow)
+                self.tableView.reloadData()
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+                    }
                 }
             )
         )
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
+=======
+>>>>>>> parent of 8d70f37... Revert "修正と機能、Viewの追加"
+=======
+>>>>>>> parent of 20bb340... 修正と機能、Viewの追加
         // アラートを表示
         present(alertController, animated: true, completion: nil)
     }
